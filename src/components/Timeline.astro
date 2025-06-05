@@ -1,0 +1,388 @@
+---
+import type { TimelineItem } from '../data/portfolio';
+import { timelineData } from '../data/portfolio';
+
+// Sort timeline data by start date (newest first for reverse chronological order)
+const sortedTimelineData = [...timelineData].sort((a, b) => {
+  return new Date(b.startDate + '-01').getTime() - new Date(a.startDate + '-01').getTime();
+});
+
+// Process timeline items - education left, experience right
+const timelineItems = sortedTimelineData.map((item, index) => ({
+  ...item,
+  side: item.type === 'education' ? 'left' : 'right' // Education left, experience right
+}));
+---
+
+<section id="timeline" class="bg-darkBg py-20 px-4 relative overflow-hidden">
+  <div class="container mx-auto max-w-4xl">
+    <!-- Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-6xl font-bold text-light mb-6 timeline-title opacity-0">
+        Mein Werdegang
+      </h2>
+      <p class="text-lg text-light/70 max-w-2xl mx-auto timeline-subtitle opacity-0">
+        Ein Überblick über meine berufliche Erfahrung und akademische Ausbildung
+      </p>
+    </div>
+    
+    <!-- Timeline Container -->
+    <div class="timeline-container relative">
+      <!-- Central Line -->
+      <div class="timeline-line absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-secondary/20 transform -translate-x-1/2">
+        <div class="timeline-progress absolute top-0 left-0 w-full bg-gradient-to-b from-primary to-secondary transform-gpu origin-top" style="transform: scaleY(0);"></div>
+      </div>
+      
+      <!-- Timeline Items -->
+      <div class="timeline-items">
+        {sortedTimelineData.map((item, index) => {
+          const isEducation = item.type === 'education';
+          const isLeft = isEducation;
+          
+          return (
+            <div class="timeline-item relative mb-12 opacity-0" data-index={index}>
+              <!-- Timeline Dot -->
+              <div class={`timeline-dot absolute left-1/2 top-1/2 w-6 h-6 rounded-full border-4 border-darkBg transform -translate-x-1/2 -translate-y-1/2 z-10 ${isEducation ? 'bg-primary shadow-primary/50' : 'bg-primary shadow-primary/50'} shadow-lg transition-all duration-300 hover:scale-125`}></div>
+              
+              <!-- Date positioned on opposite side -->
+              <div class={`timeline-date absolute top-1/2 w-44 flex items-center justify-center transform -translate-y-1/2 ${isLeft ? 'left-1/2 ml-8' : 'right-1/2 mr-8'}`}>
+                <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
+                  <div class="text-sm text-white font-medium text-center whitespace-nowrap">
+                    {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Content Container -->
+              <div class={`content-wrapper grid grid-cols-12 gap-8 items-center ${isLeft ? '' : ''}`}>
+                {isLeft ? (
+                  <>
+                    <!-- Education Content (Left Side) -->
+                    <div class="col-span-12 md:col-span-5 md:text-right">
+                      <div class="timeline-content bg-gradient-to-br from-gray-900/95 to-gray-800/90 backdrop-blur-sm border border-primary/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex items-center gap-2 mb-3 md:justify-end">
+                          <span class="text-2xl">🎓</span>
+                          <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            Bildung
+                          </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-light mb-2 leading-tight">
+                          {item.title}
+                        </h3>
+                        
+                        <p class="text-primary font-semibold mb-2 text-sm">
+                          {item.organization}
+                        </p>
+                        
+                        <p class="text-light/80 text-sm leading-relaxed mb-3">
+                          {item.description}
+                        </p>
+                        
+                        {item.location && (
+                          <div class="flex items-center gap-2 text-xs text-light/50 md:justify-end">
+                            <span>📍</span>
+                            <span>{item.location}</span>
+                          </div>
+                        )}
+                        
+                        {item.technologies && item.technologies.length > 0 && (
+                          <div class="mt-4">
+                            <div class="flex flex-wrap gap-1 md:justify-end">
+                              {item.technologies.map(tech => (
+                                <span class="text-xs px-2 py-1 bg-primary/10 text-primary/90 rounded-md border border-primary/20">
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <!-- Center spacer -->
+                    <div class="hidden md:block col-span-2"></div>
+                    
+                    <!-- Empty right side -->
+                    <div class="hidden md:block col-span-5"></div>
+                  </>
+                ) : (
+                  <>
+                    <!-- Empty left side -->
+                    <div class="hidden md:block col-span-5"></div>
+                    
+                    <!-- Center spacer -->
+                    <div class="hidden md:block col-span-2"></div>
+                    
+                    <!-- Experience Content (Right Side) -->
+                    <div class="col-span-12 md:col-span-5">
+                      <div class="timeline-content bg-gradient-to-br from-gray-900/95 to-gray-800/90 backdrop-blur-sm border border-primary/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+                        <div class="flex items-center gap-2 mb-3">
+                          <span class="text-2xl">💼</span>
+                          <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                            Erfahrung
+                          </span>
+                        </div>
+                        
+                        <h3 class="text-xl font-bold text-light mb-2 leading-tight">
+                          {item.title}
+                        </h3>
+                        
+                        <p class="text-primary font-semibold mb-2 text-sm">
+                          {item.organization}
+                        </p>
+                        
+                        <p class="text-light/80 text-sm leading-relaxed mb-3">
+                          {item.description}
+                        </p>
+                        
+                        {item.location && (
+                          <div class="flex items-center gap-2 text-xs text-light/50">
+                            <span>📍</span>
+                            <span>{item.location}</span>
+                          </div>
+                        )}
+                        
+                        {item.technologies && item.technologies.length > 0 && (
+                          <div class="mt-4">
+                            <div class="flex flex-wrap gap-1">
+                              {item.technologies.map(tech => (
+                                <span class="text-xs px-2 py-1 bg-primary/10 text-primary/90 rounded-md border border-primary/20">
+                                  {tech}
+                                </span>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    
+    <!-- Download CV Section -->
+    <div class="mt-16 text-center border-t border-primary/20 pt-12">
+      <p class="text-light/80 mb-4 text-sm">
+        Für mehr Bequemlichkeit können Sie auch meinen Lebenslauf als PDF herunterladen
+      </p>
+      <a href="/Lebenslauf-2025-IAN.pdf" download="Lebenslauf-Manuel-Paniagua.pdf" class="inline-flex items-center gap-2 px-4 py-2 border border-primary/40 text-primary/90 rounded-md hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 text-sm">
+        <i class="fas fa-file-pdf"></i>
+        <span>Lebenslauf herunterladen</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Animate title and subtitle on load
+  const title = document.querySelector('.timeline-title') as HTMLElement;
+  const subtitle = document.querySelector('.timeline-subtitle') as HTMLElement;
+  
+  if (title && subtitle) {
+    setTimeout(() => {
+      title.style.opacity = '1';
+      title.style.transform = 'translateY(0)';
+    }, 200);
+    
+    setTimeout(() => {
+      subtitle.style.opacity = '1';
+      subtitle.style.transform = 'translateY(0)';
+    }, 400);
+  }
+  
+  // Timeline elements
+  const timelineContainer = document.querySelector('.timeline-container') as HTMLElement;
+  const timelineLine = document.querySelector('.timeline-line') as HTMLElement;
+  const timelineProgress = document.querySelector('.timeline-progress') as HTMLElement;
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  
+  if (!timelineContainer || !timelineLine || !timelineProgress) return;
+  
+  // Set timeline line height
+  const updateTimelineHeight = () => {
+    const containerHeight = timelineContainer.scrollHeight;
+    timelineLine.style.height = `${containerHeight - 80}px`;
+  };
+  
+  updateTimelineHeight();
+  window.addEventListener('resize', updateTimelineHeight);
+  
+  // Progress animation on scroll
+  const updateProgress = () => {
+    const rect = timelineContainer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const containerHeight = rect.height;
+    
+    let progress = 0;
+    
+    if (rect.top <= windowHeight && rect.bottom >= 0) {
+      if (rect.top > 0) {
+        progress = (windowHeight - rect.top) / containerHeight;
+      } else if (rect.bottom < windowHeight) {
+        progress = 1;
+      } else {
+        progress = (-rect.top + windowHeight) / (containerHeight + windowHeight);
+      }
+    }
+    
+    progress = Math.max(0, Math.min(1, progress));
+    timelineProgress.style.transform = `scaleY(${progress})`;
+  };
+  
+  // Item animations
+  const itemObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const item = entry.target as HTMLElement;
+        const index = parseInt(item.getAttribute('data-index') || '0');
+        
+        setTimeout(() => {
+          item.style.opacity = '1';
+          item.style.transform = 'translateY(0)';
+          
+          // Animate dot
+          const dot = item.querySelector('.timeline-dot') as HTMLElement;
+          if (dot) {
+            setTimeout(() => {
+              dot.style.transform = 'translate(-50%, -50%) scale(1)';
+            }, 200);
+          }
+          
+          // Animate content with slide effect
+          const content = item.querySelector('.timeline-content') as HTMLElement;
+          if (content) {
+            const timelineContentElement = item.querySelector('.timeline-content');
+            const isEducation = timelineContentElement && 
+                              timelineContentElement.innerHTML.includes('Bildung');
+            
+            content.style.opacity = '0';
+            content.style.transform = isEducation ? 'translateX(-50px)' : 'translateX(50px)';
+            
+            setTimeout(() => {
+              content.style.opacity = '1';
+              content.style.transform = 'translateX(0)';
+            }, 400);
+          }
+        }, index * 100);
+        
+        itemObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+  });
+  
+  // Set initial styles and observe items
+  timelineItems.forEach((item, index) => {
+    const htmlItem = item as HTMLElement;
+    
+    // Initial states
+    htmlItem.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    htmlItem.style.transform = 'translateY(30px)';
+    htmlItem.style.opacity = '0';
+    
+    const dot = item.querySelector('.timeline-dot') as HTMLElement;
+    if (dot) {
+      dot.style.transform = 'translate(-50%, -50%) scale(0)';
+      dot.style.transition = 'transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+    }
+    
+    const content = item.querySelector('.timeline-content') as HTMLElement;
+    if (content) {
+      content.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    }
+    
+    itemObserver.observe(item);
+  });
+  
+  // Set initial styles for title and subtitle
+  if (title) {
+    title.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    title.style.transform = 'translateY(-20px)';
+    title.style.opacity = '0';
+  }
+  
+  if (subtitle) {
+    subtitle.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    subtitle.style.transform = 'translateY(-20px)';
+    subtitle.style.opacity = '0';
+  }
+  
+  // Scroll listener for progress
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        updateProgress();
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+  
+  // Initial progress calculation
+  updateProgress();
+});
+</script>
+
+<style>
+  .timeline-container {
+    position: relative;
+    padding: 2rem 0;
+  }
+  
+  .timeline-line {
+    transition: height 0.3s ease;
+    min-height: 100px;
+  }
+  
+  .timeline-progress {
+    transition: transform 0.1s linear;
+    transform-origin: top;
+  }
+  
+  .timeline-dot {
+    box-shadow: 0 0 20px currentColor;
+  }
+  
+  .timeline-content {
+    will-change: transform;
+  }
+  
+  .timeline-item {
+    will-change: transform, opacity;
+  }
+  
+  /* Mobile adjustments */
+  @media (max-width: 768px) {
+    .timeline-item .content-wrapper {
+      grid-template-columns: 1fr;
+      text-align: left !important;
+    }
+    
+    .timeline-item .content-wrapper > div {
+      grid-column: 1 !important;
+    }
+    
+    .timeline-dot {
+      left: 1rem !important;
+      transform: translateX(0) translateY(-50%) !important;
+    }
+    
+    .timeline-line {
+      left: 1rem !important;
+      transform: translateX(0) !important;
+    }
+    
+    .timeline-item {
+      padding-left: 3rem;
+    }
+  }
+</style> 

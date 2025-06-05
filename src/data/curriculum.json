@@ -1,0 +1,139 @@
+{
+    "personal_info": {
+      "name": "Manuel Paniagua",
+      "address": "Beim Andreasbrunnen 6, Hamburg",
+      "email": "paniagua.ian.de@gmail.com",
+      "phone": "017610816765",
+      "linkedin": "https://linkedin.com/in/ian-paniagua",
+      "github": "https://ianpaniagua.github.io/IanPaniagua/"
+    },
+    "education": [
+      {
+        "period": "02/2023 – 02/2025",
+        "location": "Hamburg",
+        "title": "Umschulung Fachinformatiker Anwendungsentwicklung",
+        "institution": "Baumann Bildung und Qualifizierung GmbH"
+      },
+      {
+        "period": "04/2021 – 12/2023",
+        "location": "Online",
+        "title": "Data Analytics by Google Analytics",
+        "institution": "Coursera",
+        "status": "Erfolgreich Abgeschlossen"
+      },
+      {
+        "period": "02/2024",
+        "location": "Hamburg",
+        "title": "Englischkurs Business Fortgeschritten",
+        "institution": "Verein für berufliche Weiterbildung e.V."
+      },
+      {
+        "period": "06/2022",
+        "location": "Hamburg",
+        "title": "Telc Deutsch B2",
+        "institution": "Speakeasy"
+      },
+      {
+        "period": "09/2018 – 06/2020",
+        "location": "Sa Pobla, Mallorca",
+        "title": "Ausbildung Finanzen und Verwaltungsfachangestellter",
+        "institution": "CIFP Joan Taix",
+        "status": "Erfolgreich Abgeschlossen"
+      },
+      {
+        "period": "10/2016 – 12/2016",
+        "location": "Palma de Mallorca",
+        "title": "Oberkellner Kurs",
+        "institution": "ETB - Balearische Tourismusschule"
+      },
+      {
+        "period": "01/2016 – 03/2016",
+        "location": "Köln",
+        "title": "Intensiv Deutschkurs A1-A2",
+        "institution": "IH Cologne Insula Sprachschule"
+      },
+      {
+        "period": "09/2013 – 06/2015",
+        "location": "Sa Pobla, Mallorca",
+        "title": "Ausbildung Kaufmann",
+        "institution": "CIFP Joan Taix",
+        "status": "Erfolgreich Abgeschlossen"
+      }
+    ],
+    "experience": [
+      {
+        "period": "04/2023 – 01/2025",
+        "location": "Hamburg",
+        "position": "Praktikum Software Developer",
+        "company": "MAXEDV-Beratungs GmbH"
+      },
+      {
+        "period": "10/2021 – 12/2022",
+        "location": "Hamburg",
+        "position": "Bellmann",
+        "company": "Hotel Park Hyatt Hamburg"
+      },
+      {
+        "period": "11/2020 – 09/2021",
+        "location": "Wenzendorf, Deutschland",
+        "position": "Kommissionierer",
+        "company": "LIDL GmbH & Co. KG"
+      },
+      {
+        "period": "05/2020 – 09/2020",
+        "location": "Muro, Mallorca",
+        "position": "Rettungsschwimmer",
+        "company": "Städtischen Schwimmbad"
+      },
+      {
+        "period": "05/2019 – 09/2019",
+        "location": "Alcudia, Mallorca",
+        "position": "Kellner",
+        "company": "Hotel Alcudia Pins, TUI"
+      },
+      {
+        "period": "10/2015 – 12/2018",
+        "location": "Can Picafort, Mallorca",
+        "position": "Kellner - Oberkellner",
+        "company": "Restaurant Marypaz"
+      },
+      {
+        "period": "06/2015 – 07/2015",
+        "location": "Sa Pobla, Mallorca",
+        "position": "Praktikum bei Barcelo Travel Agency",
+        "company": "Barcelo Viajes"
+      }
+    ],
+    "skills": {
+      "languages": {
+        "Spanisch": "Muttersprache",
+        "Katalanisch": "Muttersprache",
+        "Deutsch": "Stufe B2 - C1",
+        "Englisch": "Stufe B1 – B2"
+      },
+      "technologies": [
+        "HTML & CSS",
+        "TailwindCSS",
+        "JavaScript",
+        "Typescript",
+        "React",
+        "Astro",
+        "JAVA (Spring)",
+        "Node.js",
+        "Python",
+        "SQL",
+        "MongoDB",
+        "Git",
+        "Github",
+        "AWS",
+        "Netlify"
+      ]
+    },
+    "certifications_and_misc": [
+      "Scrum Foundation und Scrum Master",
+      "Excel Skills for Business: Essentials (Coursera, Macquarie University)",
+      "Foundations of Digital Marketing and E-commerce (Coursera, Google)",
+      "Führerschein B"
+    ]
+  }
+  

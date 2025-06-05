@@ -1,0 +1,207 @@
+---
+import { personalInfo } from '../data/portfolio';
+---
+
+<section id="hero" class="h-screen w-full flex flex-col items-center justify-center text-center relative overflow-hidden" style="background-color: #030303; color: #F1EFEC;">
+  <div class="relative z-10 px-6 max-w-5xl mx-auto">
+    <div id="profile-image" class="mb-12 relative overflow-hidden rounded-full w-64 h-64 mx-auto border-4 cursor-pointer" style="border-color: #D4C9BE;">
+      <img 
+        src="/image/ian-foto.png" 
+        alt="Manuel Paniagua - Profile Photo" 
+        class="w-full h-full object-cover"
+        style="object-position: center top; image-rendering: -webkit-optimize-contrast; image-rendering: smooth; transform: translateZ(0); backface-visibility: hidden; will-change: transform;"
+      />
+    </div>
+    
+    <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 animate-title" style="color: #F1EFEC;">
+      {personalInfo.name}
+    </h1>
+    
+    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-subtitle" style="color: #D4C9BE;">
+      Fachinformatiker Anwendungsentwicklung
+    </p>
+    
+    <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <a href="/Lebenslauf-2025-IAN.pdf" download="Lebenslauf-Manuel-Paniagua.pdf" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-light rounded-md hover:bg-primary/80 transition-colors">
+        <i class="fas fa-download"></i>
+        <span>Lebenslauf herunterladen</span>
+      </a>
+      <a href={personalInfo.linkedin} target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary hover:text-light transition-colors">
+        <i class="fab fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
+      <a href={personalInfo.github} target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary hover:text-light transition-colors">
+        <i class="fab fa-github"></i>
+        <span>GitHub</span>
+      </a>
+    </div>
+    
+    <p class="text-sm text-light/60 mb-2">
+      <i class="fas fa-map-marker-alt mr-2"></i>
+      {personalInfo.address}
+    </p>
+    
+    <p class="text-sm text-light/60 mb-8">
+      <i class="far fa-envelope mr-2"></i>
+      {personalInfo.email}
+    </p>
+  </div>
+  
+  <div id="scroll-indicator" class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce" style="color: #F1EFEC;">
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      width="48" 
+      height="48" 
+      viewBox="0 0 24 24" 
+      fill="none" 
+      stroke="currentColor" 
+      stroke-width="2" 
+      stroke-linecap="round" 
+      stroke-linejoin="round"
+    >
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+  
+  <!-- Background gradient effect -->
+  <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.8), rgba(18,52,88,0.2), rgba(3,3,3,1));"></div>
+</section>
+
+<style>
+  .animate-title {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .animate-subtitle {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  /* Improved image quality during scaling */
+  #profile-image {
+    will-change: transform, width, height;
+    transform: translateZ(0);
+  }
+  
+  #profile-image img {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: smooth;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) translateX(-50%);
+    }
+    40% {
+      transform: translateY(-20px) translateX(-50%);
+    }
+    60% {
+      transform: translateY(-10px) translateX(-50%);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initial animations
+    const title = document.getElementById('hero-title');
+    const subtitle = document.getElementById('hero-subtitle');
+    const profileImage = document.getElementById('profile-image');
+    const scrollIndicator = document.getElementById('scroll-indicator');
+    
+    if (title) {
+      title.style.opacity = '1';
+      title.style.transform = 'translateY(0)';
+      title.style.transition = 'opacity 1s ease, transform 1s ease';
+    }
+    
+    if (subtitle) {
+      setTimeout(() => {
+        subtitle.style.opacity = '1';
+        subtitle.style.transform = 'translateY(0)';
+        subtitle.style.transition = 'opacity 1s ease, transform 1s ease';
+      }, 300);
+    }
+    
+    // Apply transitions to the profile image
+    if (profileImage) {
+      profileImage.style.transition = 'all 0.5s ease';
+      
+      // Add click event to scroll to top
+      profileImage.addEventListener('click', () => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+    
+    // Scroll animations
+    window.addEventListener('scroll', () => {
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Profile image animation - move to left side and shrink
+      if (profileImage) {
+        // Calculate progress of scroll (0 to 1)
+        const progress = Math.min(scrollPosition / (windowHeight * 0.5), 1);
+        
+        if (scrollPosition < 50) {
+          // At top of page - reset to original position
+          profileImage.style.position = 'relative';
+          profileImage.style.top = 'auto';
+          profileImage.style.left = 'auto';
+          profileImage.style.transform = 'translateX(0) scale(1)';
+          profileImage.style.marginBottom = '3rem';
+          profileImage.style.zIndex = '10';
+          profileImage.style.width = '16rem';
+          profileImage.style.height = '16rem';
+        } else if (progress < 1) {
+          // Transitioning - move left and shrink
+          const translateX = -40 * progress; // percentage of viewport width
+          const scale = 1 - (0.4 * progress); // scale down to 60% of original size
+          
+          // Apply transformations during transition
+          profileImage.style.position = 'relative';
+          profileImage.style.transform = `translateX(${translateX}vw) scale(${scale})`;
+          profileImage.style.marginBottom = '3rem';
+        } else {
+          // Fully scrolled - fix to top left
+          profileImage.style.position = 'fixed';
+          profileImage.style.top = '20px';
+          profileImage.style.left = '20px';
+          profileImage.style.width = '64px';
+          profileImage.style.height = '64px';
+          profileImage.style.marginBottom = '0';
+          profileImage.style.zIndex = '100';
+          profileImage.style.transform = 'none';
+        }
+      }
+      
+      // Fade out title and subtitle based on scroll
+      if (title && subtitle) {
+        const fadeOutProgress = Math.min(scrollPosition / (windowHeight * 0.3), 1);
+        const opacity = 1 - fadeOutProgress;
+        
+        title.style.opacity = opacity.toString();
+        subtitle.style.opacity = opacity.toString();
+      }
+      
+      // Fade out scroll indicator
+      if (scrollIndicator && scrollPosition > 50) {
+        scrollIndicator.style.opacity = '0';
+      } else if (scrollIndicator) {
+        scrollIndicator.style.opacity = '1';
+      }
+    });
+  });
+</script> 
