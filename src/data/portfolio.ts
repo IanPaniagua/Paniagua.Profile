@@ -198,7 +198,6 @@ export const projectsData: Project[] = [
     ],
     technologies: ["Python", "AWS Textract", "IMAP", "Email Processing", "Invoice Processing", "OCR", "File Management", "PyInstaller", "Windows"],
     githubUrl: "https://github.com/IanPaniagua/automatisierte_email_Anhang-AWS_pyinstaller",
-    liveUrl: "/projects/Email-verwalten/Email-verwalten.pptx",
     documentationUrl: "/projects/Email-verwalten/Paniagua_Projekt_IHK.pdf"
   },
   {
@@ -226,6 +225,19 @@ export const projectsData: Project[] = [
     technologies: ["Next.js", "TypeScript", "TailwindCSS", "Firebase", "Vercel", "React", "Responsive Design", "Authentication"],
     githubUrl: "https://github.com/IanPaniagua/linguflix-app",
     liveUrl: "https://linguflix-app.vercel.app/"
+  },
+  {
+    id: 4,
+    title: "Fachinformatiker-Prüfungsvorbereitung",
+    description: "Diese Webseite ist dafür gedacht, die gesamte Theorie der Fachinformatiker-Prüfung in einfachem Deutsch zu vermitteln. Mit kurzen und klaren Erklärungen. Außerdem haben Benutzer die Möglichkeit, über 50 Fragen zur Prüfung zu beantworten und zu üben. Alle Themen wurden aus den letzten Prüfungen seit 2022 zusammengestellt. Die Anwendung bietet eine strukturierte Seitenleiste für einfache Navigation durch Theorie und interaktive Übungen für API 1 und API 2.",
+    images: [
+      "/projects/fachinformatik/fachinformatik.PNG",
+      "/projects/fachinformatik/fachinformatik-2.PNG",
+      "/projects/fachinformatik/fachinformatik-3.PNG"
+    ],
+    technologies: ["Astro", "TailwindCSS", "Netlify", "Educational Platform", "Interactive Exercises", "German Language"],
+    githubUrl: "https://github.com/IanPaniagua/Fachinformatik-Website",
+    liveUrl: "https://fachinformatik.netlify.app/"
   }
 ];
 
