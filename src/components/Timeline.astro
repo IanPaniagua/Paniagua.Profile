@@ -42,10 +42,10 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
           return (
             <div class="timeline-item relative mb-12 opacity-0" data-index={index}>
               <!-- Timeline Dot -->
-              <div class={`timeline-dot absolute left-1/2 top-1/2 w-6 h-6 rounded-full border-4 border-darkBg transform -translate-x-1/2 -translate-y-1/2 z-10 ${isEducation ? 'bg-primary shadow-primary/50' : 'bg-primary shadow-primary/50'} shadow-lg transition-all duration-300 hover:scale-125`}></div>
+              <div class={`timeline-dot absolute left-1/2 md:left-1/2 top-1/2 w-6 h-6 rounded-full border-4 border-darkBg transform -translate-x-1/2 -translate-y-1/2 z-10 ${isEducation ? 'bg-primary shadow-primary/50' : 'bg-primary shadow-primary/50'} shadow-lg transition-all duration-300 hover:scale-125`}></div>
               
-              <!-- Date positioned on opposite side -->
-              <div class={`timeline-date absolute top-1/2 w-44 flex items-center justify-center transform -translate-y-1/2 ${isLeft ? 'left-1/2 ml-8' : 'right-1/2 mr-8'}`}>
+              <!-- Date positioned on opposite side (desktop) / above content (mobile) -->
+              <div class={`timeline-date absolute md:absolute md:top-1/2 md:w-44 flex items-center justify-center md:transform md:-translate-y-1/2 ${isLeft ? 'md:left-1/2 md:ml-8' : 'md:right-1/2 md:mr-8'}`}>
                 <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
                   <div class="text-sm text-white font-medium text-center whitespace-nowrap">
                     {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
@@ -59,6 +59,15 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
                   <>
                     <!-- Education Content (Left Side) -->
                     <div class="col-span-12 md:col-span-5 md:text-right">
+                      <!-- Mobile date (shown only on mobile) -->
+                      <div class="md:hidden mb-4 flex justify-center">
+                        <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
+                          <div class="text-sm text-white font-medium text-center whitespace-nowrap">
+                            {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
+                          </div>
+                        </div>
+                      </div>
+                      
                       <div class="timeline-content bg-gradient-to-br from-gray-900/95 to-gray-800/90 backdrop-blur-sm border border-primary/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-2 mb-3 md:justify-end">
                           <span class="text-2xl">🎓</span>
@@ -116,6 +125,15 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
                     
                     <!-- Experience Content (Right Side) -->
                     <div class="col-span-12 md:col-span-5">
+                      <!-- Mobile date (shown only on mobile) -->
+                      <div class="md:hidden mb-4 flex justify-center">
+                        <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
+                          <div class="text-sm text-white font-medium text-center whitespace-nowrap">
+                            {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
+                          </div>
+                        </div>
+                      </div>
+                      
                       <div class="timeline-content bg-gradient-to-br from-gray-900/95 to-gray-800/90 backdrop-blur-sm border border-primary/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-2 mb-3">
                           <span class="text-2xl">💼</span>
@@ -381,8 +399,21 @@ document.addEventListener('DOMContentLoaded', () => {
       transform: translateX(0) !important;
     }
     
+    .timeline-date {
+      display: none !important;
+    }
+    
     .timeline-item {
       padding-left: 3rem;
+      margin-bottom: 2rem;
+    }
+    
+    .timeline-content {
+      text-align: left !important;
+    }
+    
+    .timeline-content .flex {
+      justify-content: flex-start !important;
     }
   }
 </style> 
