@@ -363,7 +363,7 @@ export const skills = {
     "Spanisch": "Muttersprache",
     "Katalanisch": "Muttersprache", 
     "Deutsch": "Stufe B2 - C1",
-    "Englisch": "Stufe B1 – B2"
+    "Englisch": "Stufe B2 – C1"
   },
   technologies: [
     "HTML & CSS",
