@@ -292,13 +292,21 @@ export const certificatesData: Certificate[] = [
   },
   {
     id: 7,
+    title: "Foundations of Project Management",
+    organization: "Coursera, Google",
+    date: "2024",
+    verificationId: "https://coursera.org/verify/C4RF1IUTXOWG",
+    image: "/image/google-logo.jpg"
+  },
+  {
+    id: 8,
     title: "Englischkurs Business Fortgeschritten",
     organization: "Verein für berufliche Weiterbildung e.V.",
     date: "2024",
     image: "/image/VWB.png"
   },
   {
-    id: 8,
+    id: 9,
     title: "Telc Deutsch B2",
     organization: "Speakeasy",
     date: "2022",
@@ -306,14 +314,14 @@ export const certificatesData: Certificate[] = [
     image: "/image/telc.webp"
   },
   {
-    id: 9,
+    id: 10,
     title: "Master en CSS: Responsive, SASS, Flexbox, Grid, Bootstrap",
     organization: "Victor Robles Web",
     date: "2023",
     image: "/image/css.png"
   },
   {
-    id: 10,
+    id: 11,
     title: "100 Days Of Code Web Development Bootcamp",
     organization: "ACADEMIND by Maximilian Schwarzmüller",
     date: "2024",
