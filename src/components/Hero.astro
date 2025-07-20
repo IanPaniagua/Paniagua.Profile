@@ -2,52 +2,54 @@
 import { personalInfo } from '../data/portfolio';
 ---
 
-<section id="hero" class="h-screen w-full flex flex-col items-center justify-center text-center relative overflow-hidden" style="background-color: #030303; color: #F1EFEC;">
+<section id="hero" class="h-screen w-full flex flex-col items-center justify-center text-center relative overflow-hidden luxury-bg-gradient">
   <div class="relative z-10 px-6 max-w-5xl mx-auto">
-    <div id="profile-image" class="mb-12 relative overflow-hidden rounded-full w-64 h-64 mx-auto border-4 cursor-pointer" style="border-color: #D4C9BE;">
+    <div id="profile-image" class="mb-12 relative overflow-hidden rounded-full w-64 h-64 mx-auto border-4 cursor-pointer luxury-hover" style="border-color: #d4af37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);">
       <img 
         src="/image/ian-foto.png" 
         alt="Manuel Paniagua - Profile Photo" 
         class="w-full h-full object-cover"
         style="object-position: center top; image-rendering: -webkit-optimize-contrast; image-rendering: smooth; transform: translateZ(0); backface-visibility: hidden; will-change: transform;"
       />
+      <!-- Efecto de brillo dorado en el borde - reducido -->
+      <div class="absolute inset-0 rounded-full" style="background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);"></div>
     </div>
     
-    <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-6 animate-title" style="color: #F1EFEC;">
+    <h1 id="hero-title" class="text-5xl md:text-7xl font-luxury font-bold mb-6 animate-title luxury-title">
       {personalInfo.name}
     </h1>
     
-    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-subtitle" style="color: #D4C9BE;">
+    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-subtitle luxury-subtitle">
       Fachinformatiker Anwendungsentwicklung
     </p>
     
     <div class="flex flex-wrap justify-center gap-4 mb-10">
-              <a href="/Lebenslauf_Paniagua.pdf" download="Lebenslauf-Manuel-Paniagua.pdf" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-light rounded-md hover:bg-primary/80 transition-colors">
+      <a href="/Lebenslauf_Paniagua.pdf" download="Lebenslauf-Manuel-Paniagua.pdf" class="luxury-button inline-flex items-center gap-2">
         <i class="fas fa-download"></i>
         <span>Lebenslauf herunterladen</span>
       </a>
-      <a href={personalInfo.linkedin} target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary hover:text-light transition-colors">
+      <a href={personalInfo.linkedin} target="_blank" class="luxury-button-outline inline-flex items-center gap-2">
         <i class="fab fa-linkedin"></i>
         <span>LinkedIn</span>
       </a>
-      <a href={personalInfo.github} target="_blank" class="inline-flex items-center gap-2 px-6 py-3 border border-primary text-primary rounded-md hover:bg-primary hover:text-light transition-colors">
+      <a href={personalInfo.github} target="_blank" class="luxury-button-outline inline-flex items-center gap-2">
         <i class="fab fa-github"></i>
         <span>GitHub</span>
       </a>
     </div>
     
-    <p class="text-sm text-light/60 mb-2">
-      <i class="fas fa-map-marker-alt mr-2"></i>
+    <p class="text-sm text-luxury-gray mb-2">
+      <i class="fas fa-map-marker-alt mr-2 luxury-accent"></i>
       {personalInfo.address}
     </p>
     
-    <p class="text-sm text-light/60 mb-8">
-      <i class="far fa-envelope mr-2"></i>
+    <p class="text-sm text-luxury-gray mb-8">
+      <i class="far fa-envelope mr-2 luxury-accent"></i>
       {personalInfo.email}
     </p>
   </div>
   
-  <div id="scroll-indicator" class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce" style="color: #F1EFEC;">
+  <div id="scroll-indicator" class="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce luxury-accent">
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
       width="48" 
@@ -58,13 +60,22 @@ import { personalInfo } from '../data/portfolio';
       stroke-width="2" 
       stroke-linecap="round" 
       stroke-linejoin="round"
+      style="filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.5));"
     >
       <path d="M12 5v14M5 12l7 7 7-7"/>
     </svg>
   </div>
   
-  <!-- Background gradient effect -->
-  <div class="absolute inset-0 z-0" style="background: linear-gradient(to bottom, rgba(3,3,3,0.8), rgba(18,52,88,0.2), rgba(3,3,3,1));"></div>
+  <!-- Background gradient effect mejorado para fondo blanco -->
+  <div class="absolute inset-0 z-0" style="background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(250,250,250,0.3) 50%, rgba(255,255,255,0.9) 100%);"></div>
+  
+  <!-- Efectos de partículas doradas -->
+  <div class="absolute inset-0 z-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-2 h-2 bg-luxury-gold rounded-full opacity-60 animate-pulse" style="animation-delay: 0s;"></div>
+    <div class="absolute top-40 right-20 w-1 h-1 bg-luxury-gold rounded-full opacity-40 animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-40 left-20 w-1.5 h-1.5 bg-luxury-gold rounded-full opacity-50 animate-pulse" style="animation-delay: 2s;"></div>
+    <div class="absolute top-60 left-1/4 w-1 h-1 bg-luxury-gold rounded-full opacity-30 animate-pulse" style="animation-delay: 3s;"></div>
+  </div>
 </section>
 
 <style>

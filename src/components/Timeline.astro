@@ -14,14 +14,14 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
 }));
 ---
 
-<section id="timeline" class="bg-darkBg py-20 px-4 relative overflow-hidden">
+<section id="timeline" class="luxury-bg-gradient py-20 px-4 relative overflow-hidden">
   <div class="container mx-auto max-w-4xl">
     <!-- Header -->
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-6xl font-bold text-light mb-6 timeline-title opacity-0">
+      <h2 class="text-4xl md:text-6xl font-luxury font-bold luxury-title mb-6 timeline-title opacity-0">
         Mein Werdegang
       </h2>
-      <p class="text-lg text-light/70 max-w-2xl mx-auto timeline-subtitle opacity-0">
+      <p class="text-lg luxury-subtitle max-w-2xl mx-auto timeline-subtitle opacity-0">
         Ein Überblick über meine berufliche Erfahrung und akademische Ausbildung
       </p>
     </div>
@@ -29,8 +29,8 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
     <!-- Timeline Container -->
     <div class="timeline-container relative">
       <!-- Central Line -->
-      <div class="timeline-line absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-primary/20 via-primary/40 to-secondary/20 transform -translate-x-1/2">
-        <div class="timeline-progress absolute top-0 left-0 w-full bg-gradient-to-b from-primary to-secondary transform-gpu origin-top" style="transform: scaleY(0);"></div>
+      <div class="timeline-line absolute left-1/2 top-0 w-0.5 bg-gradient-to-b from-luxury-gold/20 via-luxury-gold/40 to-luxury-gold/20 transform -translate-x-1/2">
+        <div class="timeline-progress absolute top-0 left-0 w-full bg-gradient-to-b from-luxury-gold to-luxury-gold-light transform-gpu origin-top" style="transform: scaleY(0);"></div>
       </div>
       
       <!-- Timeline Items -->
@@ -42,12 +42,12 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
           return (
             <div class="timeline-item relative mb-12 opacity-0" data-index={index}>
               <!-- Timeline Dot -->
-              <div class={`timeline-dot absolute left-1/2 md:left-1/2 top-1/2 w-6 h-6 rounded-full border-4 border-darkBg transform -translate-x-1/2 -translate-y-1/2 z-10 ${isEducation ? 'bg-primary shadow-primary/50' : 'bg-primary shadow-primary/50'} shadow-lg transition-all duration-300 hover:scale-125`}></div>
+              <div class={`timeline-dot absolute left-1/2 md:left-1/2 top-1/2 w-6 h-6 rounded-full border-4 border-luxury-white transform -translate-x-1/2 -translate-y-1/2 z-10 bg-luxury-gold shadow-luxury-gold shadow-lg transition-all duration-300 hover:scale-125`}></div>
               
               <!-- Date positioned on opposite side (desktop) / above content (mobile) -->
               <div class={`timeline-date absolute md:absolute md:top-1/2 md:w-44 flex items-center justify-center md:transform md:-translate-y-1/2 ${isLeft ? 'md:left-1/2 md:ml-8' : 'md:right-1/2 md:mr-8'}`}>
-                <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
-                  <div class="text-sm text-white font-medium text-center whitespace-nowrap">
+                <div class="bg-luxury-gold/10 border border-luxury-gold/20 rounded-lg px-4 py-2 backdrop-blur-sm">
+                  <div class="text-sm luxury-text font-medium text-center whitespace-nowrap">
                     {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
                   </div>
                 </div>
@@ -61,35 +61,35 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
                     <div class="col-span-12 md:col-span-5 md:text-right">
                       <!-- Mobile date (shown only on mobile) -->
                       <div class="md:hidden mb-4 flex justify-center">
-                        <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
-                          <div class="text-sm text-white font-medium text-center whitespace-nowrap">
+                        <div class="bg-luxury-gold/10 border border-luxury-gold/20 rounded-lg px-4 py-2 backdrop-blur-sm">
+                          <div class="text-sm luxury-text font-medium text-center whitespace-nowrap">
                             {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
                           </div>
                         </div>
                       </div>
                       
-                      <div class="timeline-content bg-gradient-to-br from-gray-900/95 to-gray-800/90 backdrop-blur-sm border border-primary/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+                      <div class="timeline-content luxury-card hover:shadow-luxury-gold transition-all duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-2 mb-3 md:justify-end">
                           <span class="text-2xl">🎓</span>
-                          <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                          <span class="bg-luxury-gold/20 text-luxury-gold px-3 py-1 rounded-full text-sm font-medium">
                             Bildung
                           </span>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-light mb-2 leading-tight">
+                        <h3 class="text-xl font-luxury font-bold luxury-title mb-2 leading-tight">
                           {item.title}
                         </h3>
                         
-                        <p class="text-primary font-semibold mb-2 text-sm">
+                        <p class="luxury-accent font-semibold mb-2 text-sm">
                           {item.organization}
                         </p>
                         
-                        <p class="text-light/80 text-sm leading-relaxed mb-3">
+                        <p class="luxury-text text-sm leading-relaxed mb-3">
                           {item.description}
                         </p>
                         
                         {item.location && (
-                          <div class="flex items-center gap-2 text-xs text-light/50 md:justify-end">
+                          <div class="flex items-center gap-2 text-xs text-luxury-gray md:justify-end">
                             <span>📍</span>
                             <span>{item.location}</span>
                           </div>
@@ -99,7 +99,7 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
                           <div class="mt-4">
                             <div class="flex flex-wrap gap-1 md:justify-end">
                               {item.technologies.map(tech => (
-                                <span class="text-xs px-2 py-1 bg-primary/10 text-primary/90 rounded-md border border-primary/20">
+                                <span class="text-xs px-2 py-1 bg-luxury-gold/10 text-luxury-gold rounded-md border border-luxury-gold/20">
                                   {tech}
                                 </span>
                               ))}
@@ -127,35 +127,35 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
                     <div class="col-span-12 md:col-span-5">
                       <!-- Mobile date (shown only on mobile) -->
                       <div class="md:hidden mb-4 flex justify-center">
-                        <div class="bg-primary/10 border border-primary/20 rounded-lg px-4 py-2 backdrop-blur-sm">
-                          <div class="text-sm text-white font-medium text-center whitespace-nowrap">
+                        <div class="bg-luxury-gold/10 border border-luxury-gold/20 rounded-lg px-4 py-2 backdrop-blur-sm">
+                          <div class="text-sm luxury-text font-medium text-center whitespace-nowrap">
                             {new Date(item.startDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})} bis {item.endDate === 'Present' ? 'Aktuell' : new Date(item.endDate + '-01').toLocaleDateString('de-DE', {year: 'numeric', month: 'short'})}
                           </div>
                         </div>
                       </div>
                       
-                      <div class="timeline-content bg-gradient-to-br from-gray-900/95 to-gray-800/90 backdrop-blur-sm border border-primary/30 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-primary/50 transition-all duration-500 hover:-translate-y-2">
+                      <div class="timeline-content luxury-card hover:shadow-luxury-gold transition-all duration-500 hover:-translate-y-2">
                         <div class="flex items-center gap-2 mb-3">
                           <span class="text-2xl">💼</span>
-                          <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-sm font-medium">
+                          <span class="bg-luxury-gold/20 text-luxury-gold px-3 py-1 rounded-full text-sm font-medium">
                             Erfahrung
                           </span>
                         </div>
                         
-                        <h3 class="text-xl font-bold text-light mb-2 leading-tight">
+                        <h3 class="text-xl font-luxury font-bold luxury-title mb-2 leading-tight">
                           {item.title}
                         </h3>
                         
-                        <p class="text-primary font-semibold mb-2 text-sm">
+                        <p class="luxury-accent font-semibold mb-2 text-sm">
                           {item.organization}
                         </p>
                         
-                        <p class="text-light/80 text-sm leading-relaxed mb-3">
+                        <p class="luxury-text text-sm leading-relaxed mb-3">
                           {item.description}
                         </p>
                         
                         {item.location && (
-                          <div class="flex items-center gap-2 text-xs text-light/50">
+                          <div class="flex items-center gap-2 text-xs text-luxury-gray">
                             <span>📍</span>
                             <span>{item.location}</span>
                           </div>
@@ -165,7 +165,7 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
                           <div class="mt-4">
                             <div class="flex flex-wrap gap-1">
                               {item.technologies.map(tech => (
-                                <span class="text-xs px-2 py-1 bg-primary/10 text-primary/90 rounded-md border border-primary/20">
+                                <span class="text-xs px-2 py-1 bg-luxury-gold/10 text-luxury-gold rounded-md border border-luxury-gold/20">
                                   {tech}
                                 </span>
                               ))}
@@ -184,11 +184,11 @@ const timelineItems = sortedTimelineData.map((item, index) => ({
     </div>
     
     <!-- Download CV Section -->
-    <div class="mt-16 text-center border-t border-primary/20 pt-12">
-      <p class="text-light/80 mb-4 text-sm">
+    <div class="mt-16 text-center border-t border-luxury-gold/20 pt-12">
+      <p class="luxury-text mb-4 text-sm">
         Für mehr Bequemlichkeit können Sie auch meinen Lebenslauf als PDF herunterladen
       </p>
-            <a href="/Lebenslauf_Paniagua.pdf" download="Lebenslauf-Manuel-Paniagua.pdf" class="inline-flex items-center gap-2 px-4 py-2 border border-primary/40 text-primary/90 rounded-md hover:bg-primary/10 hover:border-primary/60 transition-all duration-300 text-sm">
+      <a href="/Lebenslauf_Paniagua.pdf" download="Lebenslauf-Manuel-Paniagua.pdf" class="luxury-button-outline inline-flex items-center gap-2">
         <i class="fas fa-file-pdf"></i>
         <span>Lebenslauf herunterladen</span>
       </a>

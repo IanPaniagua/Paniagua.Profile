@@ -202,16 +202,16 @@ export const projectsData: Project[] = [
   },
   {
     id: 2,
-    title: "Digitales Profil - HTML/CSS/JavaScript",
-    description: "Eines meiner ersten Projekte, das Teil des Master CSS Kurses von Victor Robles war, dem ich meine persönliche Note verliehen habe. Entwickelt mit reinem HTML, CSS und etwas JavaScript, wobei CSS Best Practices angewendet wurden. Dieses Projekt legte die notwendigen Grundlagen für das Verständnis moderner Technologien wie TailwindCSS und zeigt meine frühen Fähigkeiten in der Frontend-Entwicklung, responsivem Design und strukturiertem CSS-Code.",
+    title: "Fachinformatiker-Prüfungsvorbereitung",
+    description: "Diese Webseite ist dafür gedacht, die gesamte Theorie der Fachinformatiker-Prüfung in einfachem Deutsch zu vermitteln. Mit kurzen und klaren Erklärungen. Außerdem haben Benutzer die Möglichkeit, über 50 Fragen zur Prüfung zu beantworten und zu üben. Alle Themen wurden aus den letzten Prüfungen seit 2022 zusammengestellt. Die Anwendung bietet eine strukturierte Seitenleiste für einfache Navigation durch Theorie und interaktive Übungen für API 1 und API 2.",
     images: [
-      "/projects/alte-profile/profile.PNG",
-      "/projects/alte-profile/profile-2.PNG",
-      "/projects/alte-profile/profile-3.PNG"
+      "/projects/fachinformatik/fachinformatik.PNG",
+      "/projects/fachinformatik/fachinformatik-2.PNG",
+      "/projects/fachinformatik/fachinformatik-3.PNG"
     ],
-    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "Frontend Development"],
-    githubUrl: "https://github.com/IanPaniagua/IanPaniagua",
-    liveUrl: "https://ianpaniagua.github.io/IanPaniagua/"
+    technologies: ["Astro", "TailwindCSS", "Netlify", "Educational Platform", "Interactive Exercises", "German Language"],
+    githubUrl: "https://github.com/IanPaniagua/Fachinformatik-Website",
+    liveUrl: "https://fachinformatik.netlify.app/"
   },
   {
     id: 3,
@@ -228,16 +228,16 @@ export const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: "Fachinformatiker-Prüfungsvorbereitung",
-    description: "Diese Webseite ist dafür gedacht, die gesamte Theorie der Fachinformatiker-Prüfung in einfachem Deutsch zu vermitteln. Mit kurzen und klaren Erklärungen. Außerdem haben Benutzer die Möglichkeit, über 50 Fragen zur Prüfung zu beantworten und zu üben. Alle Themen wurden aus den letzten Prüfungen seit 2022 zusammengestellt. Die Anwendung bietet eine strukturierte Seitenleiste für einfache Navigation durch Theorie und interaktive Übungen für API 1 und API 2.",
+    title: "Digitales Profil - HTML/CSS/JavaScript",
+    description: "Eines meiner ersten Projekte, das Teil des Master CSS Kurses von Victor Robles war, dem ich meine persönliche Note verliehen habe. Entwickelt mit reinem HTML, CSS und etwas JavaScript, wobei CSS Best Practices angewendet wurden. Dieses Projekt legte die notwendigen Grundlagen für das Verständnis moderner Technologien wie TailwindCSS und zeigt meine frühen Fähigkeiten in der Frontend-Entwicklung, responsivem Design und strukturiertem CSS-Code.",
     images: [
-      "/projects/fachinformatik/fachinformatik.PNG",
-      "/projects/fachinformatik/fachinformatik-2.PNG",
-      "/projects/fachinformatik/fachinformatik-3.PNG"
+      "/projects/alte-profile/profile.PNG",
+      "/projects/alte-profile/profile-2.PNG",
+      "/projects/alte-profile/profile-3.PNG"
     ],
-    technologies: ["Astro", "TailwindCSS", "Netlify", "Educational Platform", "Interactive Exercises", "German Language"],
-    githubUrl: "https://github.com/IanPaniagua/Fachinformatik-Website",
-    liveUrl: "https://fachinformatik.netlify.app/"
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive Design", "Frontend Development"],
+    githubUrl: "https://github.com/IanPaniagua/IanPaniagua",
+    liveUrl: "https://ianpaniagua.github.io/IanPaniagua/"
   }
 ];
 

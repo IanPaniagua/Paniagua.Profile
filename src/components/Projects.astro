@@ -1,22 +1,24 @@
+---
 import type { Project } from '../data/portfolio';
 import { projectsData } from '../data/portfolio';
+---
 
-<section id="projects" class="py-20 bg-darkBg">
+<section id="projects" class="py-20 luxury-bg-gradient">
   <div class="container mx-auto px-4 max-w-6xl">
-    <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-light projects-title">
+    <h2 class="text-4xl md:text-5xl font-luxury font-bold mb-16 text-center luxury-title projects-title">
       Meine Projekte
     </h2>
     
     <div class="projects-container space-y-24">
       {projectsData.map((project: Project, index: number) => (
-        <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 opacity-0" data-index={index}>
+        <div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 opacity-0 luxury-card" data-index={index}>
           <div class="project-info flex flex-col justify-center">
-            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-light">{project.title}</h3>
-            <p class="text-light/80 mb-6">{project.description}</p>
+            <h3 class="text-2xl md:text-3xl font-luxury font-bold mb-4 luxury-title">{project.title}</h3>
+            <p class="luxury-text mb-6">{project.description}</p>
             
             <div class="mb-6 flex flex-wrap gap-2">
               {project.technologies.map((tech: string) => (
-                <span class="inline-block px-3 py-1 bg-primary/30 text-light/90 text-sm rounded-full">
+                <span class="inline-block px-3 py-1 bg-luxury-gold/20 text-luxury-gold text-sm rounded-full border border-luxury-gold/30 luxury-hover">
                   {tech}
                 </span>
               ))}
@@ -24,14 +26,14 @@ import { projectsData } from '../data/portfolio';
             
             <div class="flex flex-wrap gap-4">
               {project.githubUrl && (
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-light rounded-md hover:bg-primary/80 transition-colors">
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="luxury-button inline-flex items-center gap-2">
                   <i class="fab fa-github"></i>
                   <span>Code ansehen</span>
                 </a>
               )}
               
               {project.liveUrl && (
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary text-darkBg rounded-md hover:bg-secondary/80 transition-colors">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" class="luxury-button-outline inline-flex items-center gap-2">
                   {project.liveUrl.endsWith('.pptx') ? (
                     <>
                       <i class="fas fa-file-powerpoint"></i>
@@ -47,7 +49,7 @@ import { projectsData } from '../data/portfolio';
               )}
               
               {project.documentationUrl && (
-                <a href={project.documentationUrl} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-light transition-colors">
+                <a href={project.documentationUrl} target="_blank" rel="noopener noreferrer" class="luxury-button-outline inline-flex items-center gap-2">
                   <i class="fas fa-file-pdf"></i>
                   <span>Dokumentation ansehen</span>
                 </a>
@@ -57,12 +59,12 @@ import { projectsData } from '../data/portfolio';
           
           <div class="project-gallery grid grid-cols-2 gap-3">
             {project.images.slice(0, 4).map((image: string, imgIndex: number) => (
-              <div class={`gallery-item rounded-lg overflow-hidden bg-gray-900 flex items-center justify-center ${imgIndex === 0 ? 'col-span-2 row-span-1' : ''}`}>
+              <div class={`gallery-item rounded-lg overflow-hidden bg-luxury-cream border border-luxury-gold/20 flex items-center justify-center luxury-hover ${imgIndex === 0 ? 'col-span-2 row-span-1' : ''}`}>
                 <img 
                   src={image} 
                   alt={`${project.title} - Image ${imgIndex + 1}`} 
                   class="max-w-full max-h-full object-contain"
-                  onerror={`this.src='https://placehold.co/600x400/123458/F1EFEC?text=Project+Image+${imgIndex + 1}'`}
+                  onerror={`this.src='https://placehold.co/600x400/fafafa/d4af37?text=Project+Image+${imgIndex + 1}'`}
                 />
               </div>
             ))}
@@ -77,10 +79,17 @@ import { projectsData } from '../data/portfolio';
   .gallery-item {
     height: 200px;
     overflow: hidden;
+    transition: all 0.3s ease;
   }
   
   .gallery-item:first-child {
     height: 280px;
+  }
+  
+  .gallery-item:hover {
+    border-color: #d4af37;
+    box-shadow: 0 4px 20px rgba(212, 175, 55, 0.3);
+    transform: translateY(-2px);
   }
   
   @media (min-width: 768px) {

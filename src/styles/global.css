@@ -1,29 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  @apply bg-darkBg text-light;
+  @apply bg-luxury-white text-luxury-black;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar de lujo */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-darkBg;
+  @apply bg-luxury-cream;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-primary rounded-md;
+  @apply bg-luxury-gold rounded-full;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-secondary;
+  @apply bg-luxury-gold-light;
+  background: linear-gradient(135deg, #f4d03f 0%, #ffd700 50%, #f4d03f 100%);
+}
+
+/* Estilos de lujo para elementos comunes */
+.luxury-card {
+  @apply bg-luxury-white border border-luxury-gold/20 rounded-lg p-6;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.luxury-button {
+  @apply bg-luxury-gold text-luxury-black font-semibold px-6 py-3 rounded-md transition-all duration-300;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.luxury-button:hover {
+  @apply bg-luxury-gold-light;
+  background: linear-gradient(135deg, #f4d03f 0%, #ffd700 50%, #f4d03f 100%);
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
+  transform: translateY(-2px);
+}
+
+.luxury-button-outline {
+  @apply border-2 border-luxury-gold text-luxury-gold font-semibold px-6 py-3 rounded-md transition-all duration-300;
+  background: transparent;
+}
+
+.luxury-button-outline:hover {
+  @apply bg-luxury-gold text-luxury-white;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.luxury-title {
+  @apply font-luxury font-bold text-luxury-gold;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+
+.luxury-subtitle {
+  @apply font-luxury font-medium text-luxury-gray;
+}
+
+.luxury-text {
+  @apply text-luxury-black;
+}
+
+.luxury-accent {
+  @apply text-luxury-gold;
+}
+
+/* Efectos de hover de lujo */
+.luxury-hover {
+  @apply transition-all duration-300;
+}
+
+.luxury-hover:hover {
+  @apply shadow-luxury-gold;
+  transform: translateY(-2px);
+}
+
+/* Animaciones de lujo */
+.luxury-fade-in {
+  animation: luxury-fade 1.5s ease-in-out;
+}
+
+.luxury-glow {
+  animation: luxury-glow 2s ease-in-out infinite alternate;
+}
+
+/* Gradientes de lujo */
+.luxury-bg-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+}
+
+.luxury-gold-gradient {
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+}
+
+.luxury-white-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
 }
