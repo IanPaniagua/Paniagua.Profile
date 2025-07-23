@@ -332,7 +332,7 @@ export const certificatesData: Certificate[] = [
 export const socialLinksData: SocialLink[] = [
   {
     name: "GitHub",
-    url: "https://ianpaniagua.github.io/IanPaniagua/",
+    url: "https://github.com/IanPaniagua",
     icon: "github"
   },
   {
@@ -354,7 +354,7 @@ export const personalInfo = {
   email: "paniagua.ian.de@gmail.com",
   phone: "017610816765",
   linkedin: "https://linkedin.com/in/ian-paniagua",
-  github: "https://ianpaniagua.github.io/IanPaniagua/"
+  github: "https://github.com/IanPaniagua"
 };
 
 // HABILIDADES
