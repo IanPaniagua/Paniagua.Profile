@@ -4,35 +4,38 @@ import { personalInfo } from '../data/portfolio';
 
 <section id="hero" class="h-screen w-full flex flex-col items-center justify-center text-center relative overflow-hidden luxury-bg-gradient">
   <div class="relative z-10 px-6 max-w-5xl mx-auto">
-    <div id="profile-image" class="mb-12 relative overflow-hidden rounded-full w-64 h-64 mx-auto border-4 cursor-pointer luxury-hover" style="border-color: #d4af37; box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);">
+    <div id="profile-image" class="mb-12 relative overflow-hidden rounded-full w-64 h-64 mx-auto border-4 cursor-pointer luxury-hover" style="border-color: #e5e5e5; box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);">
       <img 
         src="/image/ian-foto.png" 
         alt="Manuel Paniagua - Profile Photo" 
         class="w-full h-full object-cover"
-        style="object-position: center top; image-rendering: -webkit-optimize-contrast; image-rendering: smooth; transform: translateZ(0); backface-visibility: hidden; will-change: transform;"
+        style="object-position: center top; image-rendering: -webkit-optimize-contrast; image-rendering: smooth; transform: translateZ(0); backface-visibility: hidden; will-change: transform; filter: brightness(1.05) contrast(1.1) saturate(0.9);"
       />
-      <!-- Efecto de brillo dorado en el borde - reducido -->
-      <div class="absolute inset-0 rounded-full" style="background: linear-gradient(45deg, transparent 30%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);"></div>
+      <!-- Efecto de brillo sutil en el borde -->
+      <div class="absolute inset-0 rounded-full" style="background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);"></div>
     </div>
     
     <h1 id="hero-title" class="text-5xl md:text-7xl font-luxury font-bold mb-6 animate-title luxury-title">
       {personalInfo.name}
     </h1>
     
-    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-subtitle luxury-subtitle">
+    <p id="hero-subtitle" class="text-xl md:text-2xl mb-4 max-w-2xl mx-auto animate-subtitle luxury-subtitle">
       Fachinformatiker Anwendungsentwicklung
+    </p>
+    <p id="hero-subtitle-2" class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto animate-subtitle luxury-subtitle">
+      Full Stack Developer
     </p>
     
     <div class="flex flex-wrap justify-center gap-4 mb-10">
-      <a href="/Lebenslauf_Paniagua.pdf" download="Lebenslauf_Paniagua.pdf" class="luxury-button inline-flex items-center gap-2">
+      <a href="/Lebenslauf_Paniagua.pdf" download="Lebenslauf_Paniagua.pdf" class="btn-primary">
         <i class="fas fa-download"></i>
         <span>Lebenslauf herunterladen</span>
       </a>
-      <a href={personalInfo.linkedin} target="_blank" class="luxury-button-outline inline-flex items-center gap-2">
+      <a href={personalInfo.linkedin} target="_blank" class="btn-secondary">
         <i class="fab fa-linkedin"></i>
         <span>LinkedIn</span>
       </a>
-      <a href={personalInfo.github} target="_blank" class="luxury-button-outline inline-flex items-center gap-2">
+      <a href={personalInfo.github} target="_blank" class="btn-secondary">
         <i class="fab fa-github"></i>
         <span>GitHub</span>
       </a>
@@ -106,6 +109,7 @@ import { personalInfo } from '../data/portfolio';
     backface-visibility: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    filter: brightness(1.05) contrast(1.1) saturate(0.9);
   }
   
   @keyframes bounce {
@@ -141,6 +145,16 @@ import { personalInfo } from '../data/portfolio';
         subtitle.style.transform = 'translateY(0)';
         subtitle.style.transition = 'opacity 1s ease, transform 1s ease';
       }, 300);
+    }
+    
+    // Animate second subtitle
+    const subtitle2 = document.getElementById('hero-subtitle-2');
+    if (subtitle2) {
+      setTimeout(() => {
+        subtitle2.style.opacity = '1';
+        subtitle2.style.transform = 'translateY(0)';
+        subtitle2.style.transition = 'opacity 1s ease, transform 1s ease';
+      }, 600);
     }
     
     // Apply transitions to the profile image
@@ -205,6 +219,11 @@ import { personalInfo } from '../data/portfolio';
         
         title.style.opacity = opacity.toString();
         subtitle.style.opacity = opacity.toString();
+        
+        // Also fade out second subtitle
+        if (subtitle2) {
+          subtitle2.style.opacity = opacity.toString();
+        }
       }
       
       // Fade out scroll indicator

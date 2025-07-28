@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* CSS personalizado - Sin @apply directives */
 
 body {
-  @apply bg-luxury-white text-luxury-black;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
+  color: #000000;
+  background-color: #ffffff;
 }
 
 html {
@@ -21,73 +20,133 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-luxury-cream;
+  background-color: #fafafa;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-luxury-gold rounded-full;
   background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  @apply bg-luxury-gold-light;
   background: linear-gradient(135deg, #f4d03f 0%, #ffd700 50%, #f4d03f 100%);
 }
 
 /* Estilos de lujo para elementos comunes */
 .luxury-card {
-  @apply bg-luxury-white border border-luxury-gold/20 rounded-lg p-6;
+  background-color: #ffffff;
+  border: 1px solid #d4af37;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
   box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
   backdrop-filter: blur(10px);
 }
 
 .luxury-button {
-  @apply bg-luxury-gold text-luxury-black font-semibold px-6 py-3 rounded-md transition-all duration-300;
   background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%);
+  color: #000000;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
 .luxury-button:hover {
-  @apply bg-luxury-gold-light;
   background: linear-gradient(135deg, #f4d03f 0%, #ffd700 50%, #f4d03f 100%);
   box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5);
   transform: translateY(-2px);
 }
 
 .luxury-button-outline {
-  @apply border-2 border-luxury-gold text-luxury-gold font-semibold px-6 py-3 rounded-md transition-all duration-300;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  transition: all 0.3s ease;
   background: transparent;
 }
 
 .luxury-button-outline:hover {
-  @apply bg-luxury-gold text-luxury-white;
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  color: #d4af37;
+  background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 50%, #cccccc 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: #cccccc;
+}
+
+/* CLASES CENTRALIZADAS PARA BOTONES - CON MÁXIMA ESPECIFICIDAD */
+.btn-primary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  background: linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%) !important;
+  color: #000000 !important;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
+  border: none !important;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f4d03f 0%, #ffd700 50%, #f4d03f 100%) !important;
+  box-shadow: 0 6px 25px rgba(212, 175, 55, 0.5) !important;
+  transform: translateY(-2px) !important;
+}
+
+.btn-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  font-weight: 600 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 0.375rem !important;
+  transition: all 0.3s ease !important;
+  text-decoration: none !important;
+  border: 2px solid #d4af37 !important;
+  color: #d4af37 !important;
+  background: transparent !important;
+}
+
+.btn-secondary:hover {
+  color: #d4af37 !important;
+  background: linear-gradient(135deg, #ffffff 0%, #e5e5e5 50%, #cccccc 100%) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+  border-color: #cccccc !important;
+  transform: translateY(-2px) !important;
 }
 
 .luxury-title {
-  @apply font-luxury font-bold text-luxury-gold;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #d4af37;
   text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
 }
 
 .luxury-subtitle {
-  @apply font-luxury font-medium text-luxury-gray;
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: #666666;
 }
 
 .luxury-text {
-  @apply text-luxury-black;
+  color: #333333;
 }
 
 .luxury-accent {
-  @apply text-luxury-gold;
+  color: #d4af37;
 }
 
 /* Efectos de hover de lujo */
 .luxury-hover {
-  @apply transition-all duration-300;
+  transition: all 0.3s ease;
 }
 
 .luxury-hover:hover {
-  @apply shadow-luxury-gold;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
   transform: translateY(-2px);
 }
 

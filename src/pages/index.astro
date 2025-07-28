@@ -252,13 +252,13 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 							
 							<div class="flex flex-wrap gap-4">
 								{project.githubUrl && (
-									<a href={project.githubUrl} target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-primary text-light rounded-md hover:bg-primary/80 transition-colors">
+									<a href={project.githubUrl} target="_blank" class="btn-secondary">
 										<i class="fab fa-github"></i>
 										<span>Code ansehen</span>
 									</a>
 								)}
 								{project.liveUrl && (
-									<a href={project.liveUrl} target="_blank" class="inline-flex items-center gap-2 px-4 py-2 border border-primary text-primary rounded-md hover:bg-primary hover:text-light transition-colors">
+									<a href={project.liveUrl} target="_blank" class="btn-secondary">
 										{project.liveUrl.endsWith('.pptx') ? (
 											<>
 												<i class="fas fa-file-powerpoint"></i>
@@ -273,7 +273,7 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 									</a>
 								)}
 								{project.documentationUrl && (
-									<a href={project.documentationUrl} target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 border border-secondary text-secondary rounded-md hover:bg-secondary hover:text-light transition-colors">
+									<a href={project.documentationUrl} target="_blank" class="btn-secondary">
 										<i class="fas fa-file-pdf"></i>
 										<span>Dokumentation ansehen</span>
 									</a>
@@ -304,22 +304,22 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 				</p>
 				
 				<div class="mb-6">
-					<a href="https://github.com/IanPaniagua?tab=repositories" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 bg-primary text-light rounded-md hover:bg-primary/80 transition-colors">
+					<a href="https://github.com/IanPaniagua?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-secondary">
 						<i class="fab fa-github"></i>
 						<span>Alle Repositories ansehen</span>
 					</a>
 				</div>
 				
 				<div class="flex flex-wrap justify-center gap-3">
-					<a href="https://github.com/IanPaniagua/nextjs-dashboard" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-light transition-colors text-sm">
+					<a href="https://github.com/IanPaniagua/nextjs-dashboard" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">
 						<i class="fab fa-github"></i>
 						<span>nextjs-dashboard</span>
 					</a>
-					<a href="https://github.com/IanPaniagua/DanceEvent_FrontEnd" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-light transition-colors text-sm">
+					<a href="https://github.com/IanPaniagua/DanceEvent_FrontEnd" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">
 						<i class="fab fa-github"></i>
 						<span>DanceEvent_FrontEnd</span>
 					</a>
-					<a href="https://github.com/IanPaniagua/RAG_german-teacher" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-4 py-2 bg-secondary/20 border border-secondary text-secondary rounded-full hover:bg-secondary hover:text-light transition-colors text-sm">
+					<a href="https://github.com/IanPaniagua/RAG_german-teacher" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">
 						<i class="fab fa-github"></i>
 						<span>RAG_german-teacher</span>
 					</a>

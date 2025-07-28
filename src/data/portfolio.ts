@@ -294,7 +294,7 @@ export const certificatesData: Certificate[] = [
     id: 7,
     title: "Foundations of Project Management",
     organization: "Coursera, Google",
-    date: "2024",
+    date: "2025-07",
     verificationId: "https://coursera.org/verify/C4RF1IUTXOWG",
     image: "/image/google-logo.jpg"
   },
