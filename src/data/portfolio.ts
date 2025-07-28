@@ -382,4 +382,33 @@ export const skills = {
     "AWS",
     "Netlify"
   ]
+};
+
+// KEYFACTS - TECHNISCHE FÄHIGKEITEN IM DETAIL
+export const keyfacts = {
+  "Sprachen": [
+    "JavaScript", "TypeScript", "Java (OOP)", "SQL", "Unix Commands", "Python"
+  ],
+  "Frontend": [
+    "HTML", "CSS", "Tailwind CSS", "React", "Next.js", "Astro"
+  ],
+  "Backend": [
+    "Node.js", "Express", "REST-API", "Middleware", "Auth", "Websockets", "Tokens", "RAG", "TESTS", "API-OpenAI"
+  ],
+  "Datenbanken & Speicherung": [
+    "MongoDB", "Mongoose", "Firebase", "S3", "AWS Textract"
+  ],
+  "DevOps & Deployment": [
+    "Vercel", "Vite", "Hostinger", "Netlify"
+  ],
+  "Versionskontrolle": [
+    "Git", "GitHub"
+  ],
+  "Agile Methoden": [
+    "Scrum Master", "Kanban", "User Stories", "Sprints", "Milestones", "Project Charter", "Dokumentation"
+  ],
+  "Tools & Umgebung": [
+    "Notion", "Postman", "Cursor", "Visual Studio Code", "IntelliJ IDEA", "ChatGPT"
+  ]
+
 }; 

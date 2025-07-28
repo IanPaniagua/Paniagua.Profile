@@ -1,0 +1,120 @@
+---
+import { keyfacts } from '../data/portfolio';
+---
+
+<section id="keyfacts" class="py-20 luxury-bg-gradient">
+  <div class="container mx-auto px-4 max-w-6xl">
+    <h2 class="text-4xl md:text-5xl font-luxury font-bold mb-16 text-center luxury-title">
+      Keyfacts
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {Object.entries(keyfacts).map(([category, skills]) => (
+        <div class="keyfact-card luxury-card opacity-0" data-category={category}>
+          <div class="keyfact-header mb-4">
+            <h3 class="text-xl font-bold luxury-title mb-2">{category}</h3>
+            <div class="w-12 h-1 bg-gradient-to-r from-luxury-gold to-luxury-gold-light rounded-full"></div>
+          </div>
+          
+          <div class="keyfact-skills">
+            {skills.map((skill) => (
+              <span class="inline-block px-3 py-1 bg-luxury-gold/10 text-luxury-gold border border-luxury-gold/20 rounded-full text-sm font-medium mr-2 mb-2 hover:bg-luxury-gold/20 hover:border-luxury-gold/40 transition-all duration-300">
+                {skill}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .keyfact-card {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .keyfact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .keyfact-card:hover::before {
+    left: 100%;
+  }
+  
+  .keyfact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
+  }
+  
+  .keyfact-skills span {
+    transition: all 0.3s ease;
+  }
+  
+  .keyfact-skills span:hover {
+    transform: scale(1.05);
+  }
+  
+  @media (max-width: 768px) {
+    .keyfact-card {
+      margin-bottom: 1rem;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  
+  gsap.registerPlugin(ScrollTrigger);
+  
+  // Animación de entrada para las tarjetas
+  const keyfactCards = document.querySelectorAll(".keyfact-card");
+  
+  keyfactCards.forEach((card, index) => {
+    gsap.fromTo(
+      card,
+      { 
+        opacity: 0,
+        y: 50,
+        scale: 0.9
+      },
+      {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        duration: 0.8,
+        delay: index * 0.1,
+        ease: "back.out(1.7)",
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom-=100",
+          end: "top center",
+          toggleActions: "play none none none"
+        }
+      }
+    );
+  });
+  
+  // Animación del título
+  gsap.from(".keyfacts h2", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    scrollTrigger: {
+      trigger: "#keyfacts",
+      start: "top bottom-=100",
+      end: "top center",
+      toggleActions: "play none none none"
+    }
+  });
+</script> 

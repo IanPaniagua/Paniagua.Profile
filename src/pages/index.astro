@@ -3,7 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import Timeline from '../components/Timeline.astro';
 import Footer from '../components/Footer.astro';
-import { projectsData, certificatesData, personalInfo, skills } from '../data/portfolio';
+
+import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '../data/portfolio';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -64,10 +65,9 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 								</div>
 								<div class="flex flex-col">
 									<span class="text-light font-medium">Deutsch</span>
-									<span class="text-secondary/80 text-xs">(aktuelle Kurs in Deutschakademie B2+)</span>
 								</div>
 							</div>
-							<span class="text-secondary text-sm">Stufe B2 - C1</span>
+							<span class="text-secondary text-sm">Sehr gut</span>
 						</div>
 						
 						<!-- Inglés - Bandera de Inglaterra (Cruz de San Jorge) -->
@@ -81,7 +81,7 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 								</div>
 								<span class="text-light font-medium">Englisch</span>
 							</div>
-							<span class="text-secondary text-sm">Stufe B1 – B2</span>
+							<span class="text-secondary text-sm">Sehr gut</span>
 						</div>
 					</div>
 				</div>
@@ -172,6 +172,33 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 			<div class="particle particle-bg-3 absolute w-3 h-3 bg-primary/10 rounded-full"></div>
 			<div class="particle particle-bg-4 absolute w-1 h-1 bg-secondary/20 rounded-full"></div>
 			<div class="particle particle-bg-5 absolute w-2 h-2 bg-primary/15 rounded-full"></div>
+		</div>
+	</div>
+	
+	<!-- Sección Keyfacts -->
+	<div id="keyfacts" class="bg-darkBg py-12 px-4">
+		<div class="container mx-auto max-w-6xl">
+			<h2 class="text-4xl md:text-5xl font-bold mb-10 text-center text-light keyfacts-title">
+				Keyfacts
+			</h2>			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{Object.entries(keyfacts).map(([category, skills]: [string, string[]]) => (
+					<div class="keyfact-card bg-darkBg border border-secondary/30 rounded-lg p-6 hover:border-secondary/50 transition-colors opacity-0">
+						<div class="keyfact-header mb-4">
+							<h4 class="text-lg font-bold text-light mb-2">{category}</h4>
+							<div class="w-8 h-0.5 bg-secondary rounded-full"></div>
+						</div>
+						
+						<div class="keyfact-skills">
+							{skills.map((skill: string) => (
+								<span class="inline-block px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-sm font-medium mr-2 mb-2 hover:bg-secondary/20 hover:border-secondary/40 transition-all duration-300">
+									{skill}
+								</span>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
 		</div>
 	</div>
 	
@@ -325,6 +352,7 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 					</a>
 				</div>
 			</div>
+			
 		</div>
 	</div>
 	
@@ -354,6 +382,18 @@ import { projectsData, certificatesData, personalInfo, skills } from '../data/po
 			(section as HTMLElement).style.opacity = '0';
 			(section as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
 			skillsObserver.observe(section);
+		});
+		
+		// Observe keyfact cards
+		document.querySelectorAll('.keyfact-card').forEach((card, index) => {
+			(card as HTMLElement).style.transform = 'translateY(30px)';
+			(card as HTMLElement).style.opacity = '0';
+			(card as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+			
+			// Delay animation for keyfact cards
+			setTimeout(() => {
+				skillsObserver.observe(card);
+			}, index * 100);
 		});
 		
 		// Burbujas flotantes de tecnologías
