@@ -1,13 +1,74 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+/* IMPORTACIÓN DE FUENTES PROFESIONALES */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
 
 /* CSS personalizado - Sin @apply directives */
 
+/* SISTEMA DE TIPOGRAFÍA PROFESIONAL */
+:root {
+  /* FUENTES PRINCIPALES */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-secondary: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* FUENTES PARA TÍTULOS */
+  --font-heading-1: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading-2: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading-3: 'Albert Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* FUENTES PARA TEXTO */
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body-alt: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-ui: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* FUENTES MODERNAS */
+  --font-modern: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-clean: 'Onest', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-minimal: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* FUENTES TÉCNICAS */
+  --font-tech: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-code: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  
+  /* FUENTES ALTERNATIVAS */
+  --font-alt-1: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-2: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-3: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-4: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-5: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-6: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-7: 'Lexend', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-alt-8: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-primary);
   overflow-x: hidden;
   background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%);
   color: #000000;
   background-color: #ffffff;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 html {
@@ -30,6 +91,49 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #f4d03f 0%, #ffd700 50%, #f4d03f 100%);
+}
+
+/* SISTEMA DE TIPOGRAFÍA APLICADO */
+h1, .h1 {
+  font-family: var(--font-heading-1);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2, .h2 {
+  font-family: var(--font-heading-2);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+h3, .h3 {
+  font-family: var(--font-heading-3);
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+h4, .h4 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+h5, .h5 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+h6, .h6 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+p, .body-text {
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 /* Estilos de lujo para elementos comunes */
@@ -89,6 +193,7 @@ html {
   color: #000000 !important;
   box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3) !important;
   border: none !important;
+  font-family: var(--font-ui) !important;
 }
 
 .btn-primary:hover {
@@ -109,6 +214,7 @@ html {
   border: 2px solid #d4af37 !important;
   color: #d4af37 !important;
   background: transparent !important;
+  font-family: var(--font-ui) !important;
 }
 
 .btn-secondary:hover {
@@ -119,26 +225,39 @@ html {
   transform: translateY(-2px) !important;
 }
 
+/* CLASES DE TIPOGRAFÍA ESPECÍFICAS */
 .luxury-title {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading-1);
   font-weight: 700;
   color: #d4af37;
   text-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
 }
 
 .luxury-subtitle {
-  font-family: 'Playfair Display', serif;
+  font-family: var(--font-heading-2);
   font-weight: 500;
   color: #666666;
 }
 
 .luxury-text {
+  font-family: var(--font-body);
   color: #333333;
 }
 
 .luxury-accent {
+  font-family: var(--font-ui);
   color: #d4af37;
 }
+
+/* CLASES DE FUENTES ESPECÍFICAS */
+.font-display { font-family: var(--font-display) !important; }
+.font-modern { font-family: var(--font-modern) !important; }
+.font-clean { font-family: var(--font-clean) !important; }
+.font-minimal { font-family: var(--font-minimal) !important; }
+.font-tech { font-family: var(--font-tech) !important; }
+.font-code { font-family: var(--font-code) !important; }
+.font-ui { font-family: var(--font-ui) !important; }
+.font-body-alt { font-family: var(--font-body-alt) !important; }
 
 /* Efectos de hover de lujo */
 .luxury-hover {
