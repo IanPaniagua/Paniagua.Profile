@@ -4,33 +4,48 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Esquema de lujo: blanco, dorado, negro
-        'luxury-black': '#000000',
-        'luxury-dark': '#0a0a0a',
-        'luxury-gray': '#1a1a1a',
-        'luxury-white': '#ffffff',
-        'luxury-cream': '#fafafa',
-        'luxury-gold': '#d4af37',
-        'luxury-gold-light': '#f4d03f',
-        'luxury-gold-dark': '#b8860b',
-        'luxury-gold-accent': '#ffd700',
-        'luxury-silver': '#c0c0c0',
-        'luxury-silver-light': '#e8e8e8',
-        'luxury-silver-dark': '#808080',
+        // Paleta Agua & Madera
+        primary: {
+          900: '#0A1A2F', // muy oscuro, elegante (backgrounds profundos, header)
+          600: '#284B7A', // azul usable (botones, links, headers)
+          accent: '#26C6DA', // Caribbean Blue (acentos, CTAs)
+          light: '#A8FFF1', // Shallow water (fondos suaves)
+        },
+        brown: {
+          700: '#6F4E37', // madera / fondo fuerte
+          300: '#D6B79F', // arena clara, bordes y tarjetas
+        },
+        gray: {
+          900: '#1A1A1A', // texto fuerte
+          300: '#D1D1D1', // bordes / fondo suave
+        },
+        white: '#FFFFFF',
+        'off-white': '#FAFAF8',
+
+        // Semantic Aliases
+        darkBg: '#0A1A2F', // primary-900
+        surface: '#284B7A', // primary-600
+        light: '#FAFAF8', // off-white (fixing text-light usage)
+        'text-main': '#FAFAF8',
+        'text-muted': '#D1D1D1',
+
+        // Compatibility Aliases
+        'luxury-gold': '#D6B79F', // brown-300
+        'luxury-white': '#FAFAF8', // off-white
+        'luxury-gray': '#D1D1D1', // gray-300
       },
       fontFamily: {
         'luxury': ['Playfair Display', 'serif'],
         'sans': ['Inter', 'sans-serif'],
       },
       backgroundImage: {
-        'luxury-gradient': 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)',
-        'gold-gradient': 'linear-gradient(135deg, #d4af37 0%, #f4d03f 50%, #d4af37 100%)',
-        'white-gradient': 'linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #ffffff 100%)',
+        'water-gradient':
+          'linear-gradient(135deg, #0A1A2F 0%, #26C6DA 50%, #A8FFF1 100%)',
       },
       boxShadow: {
-        'luxury': '0 10px 30px rgba(212, 175, 55, 0.1)',
-        'luxury-gold': '0 4px 20px rgba(212, 175, 55, 0.3)',
-        'luxury-white': '0 4px 20px rgba(255, 255, 255, 0.1)',
+        'luxury': '0 10px 30px rgba(10, 26, 47, 0.15)',
+        'luxury-gold': '0 4px 20px rgba(40, 75, 122, 0.3)',
+        'luxury-white': '0 4px 20px rgba(168, 255, 241, 0.25)',
       },
       animation: {
         'luxury-glow': 'luxury-glow 2s ease-in-out infinite alternate',
