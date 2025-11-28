@@ -246,7 +246,8 @@ p,
 .luxury-subtitle {
   font-family: var(--font-heading-2);
   font-weight: 500;
-  color: #6F4E37;
+  color: #D6B79F;
+  /* brown-300 (lighter for dark bg) */
 }
 
 .luxury-text {

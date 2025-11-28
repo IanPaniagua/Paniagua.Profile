@@ -1,10 +1,16 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Timeline from '../components/Timeline.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Timeline from "../components/Timeline.astro";
+import Footer from "../components/Footer.astro";
 
-import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '../data/portfolio';
+import {
+	projectsData,
+	certificatesData,
+	personalInfo,
+	skills,
+	keyfacts,
+} from "../data/portfolio";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -12,35 +18,49 @@ import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '
 
 <Layout title="Manuel Paniagua - Portfolio">
 	<Hero />
-	
+
 	<div id="skills" class="bg-darkBg py-12 px-4 relative overflow-hidden">
 		<div class="container mx-auto max-w-6xl relative z-10">
-			<h2 class="text-4xl md:text-5xl font-bold mb-10 text-center text-light skills-title">
+			<h2
+				class="text-4xl md:text-5xl font-bold mb-10 text-center luxury-title skills-title"
+			>
 				Fähigkeiten
 			</h2>
-			
+
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-12">
 				<!-- Idiomas -->
 				<div class="skills-section opacity-0">
 					<h3 class="text-2xl font-bold mb-6 text-light">Sprachen</h3>
 					<div class="space-y-4">
 						<!-- Español - Bandera de España -->
-						<div class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors">
+						<div
+							class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300">
+								<div
+									class="w-8 h-8 rounded-full overflow-hidden border border-gray-300"
+								>
 									<div class="w-full h-2 bg-red-600"></div>
 									<div class="w-full h-4 bg-yellow-400"></div>
 									<div class="w-full h-2 bg-red-600"></div>
 								</div>
-								<span class="text-light font-medium">Spanisch</span>
+								<span class="text-light font-medium"
+									>Spanisch</span
+								>
 							</div>
-							<span class="text-secondary text-sm">Muttersprache</span>
+							<span class="text-secondary text-sm"
+								>Muttersprache</span
+							>
 						</div>
-						
+
 						<!-- Catalán - Bandera de Cataluña (Senyera) -->
-						<div class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors">
+						<div
+							class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300">
+								<div
+									class="w-8 h-8 rounded-full overflow-hidden border border-gray-300"
+								>
 									<div class="w-full h-1 bg-yellow-400"></div>
 									<div class="w-full h-1 bg-red-600"></div>
 									<div class="w-full h-1 bg-yellow-400"></div>
@@ -50,543 +70,784 @@ import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '
 									<div class="w-full h-1 bg-yellow-400"></div>
 									<div class="w-full h-1 bg-red-600"></div>
 								</div>
-								<span class="text-light font-medium">Katalanisch</span>
+								<span class="text-light font-medium"
+									>Katalanisch</span
+								>
 							</div>
-							<span class="text-secondary text-sm">Muttersprache</span>
+							<span class="text-secondary text-sm"
+								>Muttersprache</span
+							>
 						</div>
-						
+
 						<!-- Alemán - Bandera de Alemania -->
-						<div class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors">
+						<div
+							class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<div class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/50 bg-white flex flex-col">
-									<div class="w-full flex-1 bg-gray-800"></div>
+								<div
+									class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/50 bg-white flex flex-col"
+								>
+									<div class="w-full flex-1 bg-gray-800">
+									</div>
 									<div class="w-full flex-1 bg-red-600"></div>
-									<div class="w-full flex-1 bg-yellow-400"></div>
+									<div class="w-full flex-1 bg-yellow-400">
+									</div>
 								</div>
 								<div class="flex flex-col">
-									<span class="text-light font-medium">Deutsch</span>
+									<span class="text-light font-medium"
+										>Deutsch</span
+									>
 								</div>
 							</div>
 							<span class="text-secondary text-sm">Sehr gut</span>
 						</div>
-						
+
 						<!-- Inglés - Bandera de Inglaterra (Cruz de San Jorge) -->
-						<div class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors">
+						<div
+							class="flex justify-between items-center p-4 bg-darkBg border border-secondary/30 rounded-lg hover:border-secondary/50 transition-colors"
+						>
 							<div class="flex items-center gap-3">
-								<div class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 bg-white relative">
+								<div
+									class="w-8 h-8 rounded-full overflow-hidden border border-gray-300 bg-white relative"
+								>
 									<!-- Cruz vertical -->
-									<div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-full bg-red-600"></div>
+									<div
+										class="absolute top-0 left-1/2 transform -translate-x-1/2 w-1 h-full bg-red-600"
+									>
+									</div>
 									<!-- Cruz horizontal -->
-									<div class="absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-1 bg-red-600"></div>
+									<div
+										class="absolute top-1/2 left-0 transform -translate-y-1/2 w-full h-1 bg-red-600"
+									>
+									</div>
 								</div>
-								<span class="text-light font-medium">Englisch</span>
+								<span class="text-light font-medium"
+									>Englisch</span
+								>
 							</div>
 							<span class="text-secondary text-sm">Sehr gut</span>
 						</div>
 					</div>
 				</div>
-				
+
 				<!-- Tecnologías con burbujas flotantes -->
 				<div class="skills-section opacity-0 relative">
-					<h3 class="text-2xl font-bold mb-6 text-light">Technologien</h3>
-					<div class="relative min-h-[280px] bg-gradient-to-br from-darkBg to-primary/5 rounded-xl border border-secondary/20 overflow-hidden" style="height: auto;">
+					<h3 class="text-2xl font-bold mb-6 text-light">
+						Technologien
+					</h3>
+					<div
+						class="relative min-h-[280px] bg-gradient-to-br from-darkBg to-primary/5 rounded-xl border border-secondary/20 overflow-hidden"
+						style="height: auto;"
+					>
 						<!-- Burbujas de tecnologías -->
-						<div class="tech-bubbles absolute inset-0" style="height: 280px;">
+						<div
+							class="tech-bubbles absolute inset-0"
+							style="height: 280px;"
+						>
 							<!-- HTML & CSS -->
-							<div class="bubble bubble-1 absolute w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg" data-tech="HTML/CSS">
+							<div
+								class="bubble bubble-1 absolute w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="HTML/CSS"
+							>
 								<i class="fab fa-html5 text-2xl text-white"></i>
 							</div>
-							
+
 							<!-- JavaScript -->
-							<div class="bubble bubble-2 absolute w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg" data-tech="JavaScript">
-								<i class="fab fa-js-square text-2xl text-black"></i>
+							<div
+								class="bubble bubble-2 absolute w-20 h-20 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="JavaScript"
+							>
+								<i class="fab fa-js-square text-2xl text-black"
+								></i>
 							</div>
-							
+
 							<!-- TypeScript -->
-							<div class="bubble bubble-3 absolute w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg" data-tech="TypeScript">
-								<span class="text-white font-bold text-xs">TS</span>
+							<div
+								class="bubble bubble-3 absolute w-14 h-14 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="TypeScript"
+							>
+								<span class="text-white font-bold text-xs"
+									>TS</span
+								>
 							</div>
-							
+
 							<!-- React -->
-							<div class="bubble bubble-4 absolute w-18 h-18 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg" data-tech="React">
+							<div
+								class="bubble bubble-4 absolute w-18 h-18 bg-gradient-to-br from-cyan-400 to-cyan-500 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="React"
+							>
 								<i class="fab fa-react text-2xl text-white"></i>
 							</div>
-							
+
 							<!-- Java -->
-							<div class="bubble bubble-5 absolute w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center shadow-lg" data-tech="Java">
+							<div
+								class="bubble bubble-5 absolute w-16 h-16 bg-gradient-to-br from-red-600 to-red-700 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="Java"
+							>
 								<i class="fab fa-java text-2xl text-white"></i>
 							</div>
-							
+
 							<!-- Node.js -->
-							<div class="bubble bubble-6 absolute w-15 h-15 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg" data-tech="Node.js">
-								<i class="fab fa-node-js text-xl text-white"></i>
+							<div
+								class="bubble bubble-6 absolute w-15 h-15 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="Node.js"
+							>
+								<i class="fab fa-node-js text-xl text-white"
+								></i>
 							</div>
-							
+
 							<!-- Python -->
-							<div class="bubble bubble-7 absolute w-17 h-17 bg-gradient-to-br from-yellow-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg" data-tech="Python">
+							<div
+								class="bubble bubble-7 absolute w-17 h-17 bg-gradient-to-br from-yellow-500 to-blue-600 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="Python"
+							>
 								<i class="fab fa-python text-xl text-white"></i>
 							</div>
-							
+
 							<!-- Git -->
-							<div class="bubble bubble-8 absolute w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center shadow-lg" data-tech="Git">
-								<i class="fab fa-git-alt text-xl text-white"></i>
+							<div
+								class="bubble bubble-8 absolute w-14 h-14 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="Git"
+							>
+								<i class="fab fa-git-alt text-xl text-white"
+								></i>
 							</div>
-							
+
 							<!-- GitHub -->
-							<div class="bubble bubble-9 absolute w-16 h-16 bg-gradient-to-br from-gray-900 to-black rounded-full flex items-center justify-center shadow-lg" data-tech="GitHub">
+							<div
+								class="bubble bubble-9 absolute w-16 h-16 bg-gradient-to-br from-gray-900 to-black rounded-full flex items-center justify-center shadow-lg"
+								data-tech="GitHub"
+							>
 								<i class="fab fa-github text-xl text-white"></i>
 							</div>
-							
+
 							<!-- AWS -->
-							<div class="bubble bubble-10 absolute w-15 h-15 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg" data-tech="AWS">
+							<div
+								class="bubble bubble-10 absolute w-15 h-15 bg-gradient-to-br from-orange-400 to-orange-600 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="AWS"
+							>
 								<i class="fab fa-aws text-xl text-white"></i>
 							</div>
-							
+
 							<!-- Database -->
-							<div class="bubble bubble-11 absolute w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-lg" data-tech="SQL/MongoDB">
-								<i class="fas fa-database text-xl text-white"></i>
+							<div
+								class="bubble bubble-11 absolute w-14 h-14 bg-gradient-to-br from-purple-600 to-purple-700 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="SQL/MongoDB"
+							>
+								<i class="fas fa-database text-xl text-white"
+								></i>
 							</div>
-							
+
 							<!-- TailwindCSS -->
-							<div class="bubble bubble-12 absolute w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg" data-tech="TailwindCSS">
-								<i class="fab fa-css3-alt text-2xl text-white"></i>
+							<div
+								class="bubble bubble-12 absolute w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="TailwindCSS"
+							>
+								<i class="fab fa-css3-alt text-2xl text-white"
+								></i>
 							</div>
-							
+
 							<!-- Shopify -->
-							<div class="bubble bubble-13 absolute w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg" data-tech="Shopify">
-								<i class="fab fa-shopify text-2xl text-white"></i>
+							<div
+								class="bubble bubble-13 absolute w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center shadow-lg"
+								data-tech="Shopify"
+							>
+								<i class="fab fa-shopify text-2xl text-white"
+								></i>
 							</div>
 						</div>
-						
+
 						<!-- Tooltip para mostrar el nombre de la tecnología -->
-						<div id="tech-tooltip" class="absolute bg-black/90 text-white px-3 py-2 rounded-md text-sm pointer-events-none opacity-0 transition-opacity z-20 whitespace-nowrap border border-white/20 backdrop-blur-sm shadow-lg"></div>
+						<div
+							id="tech-tooltip"
+							class="absolute bg-black/90 text-white px-3 py-2 rounded-md text-sm pointer-events-none opacity-0 transition-opacity z-20 whitespace-nowrap border border-white/20 backdrop-blur-sm shadow-lg"
+						>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- Partículas de fondo adicionales -->
 		<div class="absolute inset-0 pointer-events-none">
-			<div class="particle particle-bg-1 absolute w-2 h-2 bg-primary/20 rounded-full"></div>
-			<div class="particle particle-bg-2 absolute w-1 h-1 bg-secondary/30 rounded-full"></div>
-			<div class="particle particle-bg-3 absolute w-3 h-3 bg-primary/10 rounded-full"></div>
-			<div class="particle particle-bg-4 absolute w-1 h-1 bg-secondary/20 rounded-full"></div>
-			<div class="particle particle-bg-5 absolute w-2 h-2 bg-primary/15 rounded-full"></div>
+			<div
+				class="particle particle-bg-1 absolute w-2 h-2 bg-primary/20 rounded-full"
+			>
+			</div>
+			<div
+				class="particle particle-bg-2 absolute w-1 h-1 bg-secondary/30 rounded-full"
+			>
+			</div>
+			<div
+				class="particle particle-bg-3 absolute w-3 h-3 bg-primary/10 rounded-full"
+			>
+			</div>
+			<div
+				class="particle particle-bg-4 absolute w-1 h-1 bg-secondary/20 rounded-full"
+			>
+			</div>
+			<div
+				class="particle particle-bg-5 absolute w-2 h-2 bg-primary/15 rounded-full"
+			>
+			</div>
 		</div>
 	</div>
-	
+
 	<!-- Sección Keyfacts -->
 	<div id="keyfacts" class="bg-darkBg py-12 px-4">
 		<div class="container mx-auto max-w-6xl">
-			<h2 class="text-4xl md:text-5xl font-bold mb-10 text-center text-light keyfacts-title">
+			<h2
+				class="text-4xl md:text-5xl font-bold mb-10 text-center luxury-title keyfacts-title"
+			>
 				Keyfacts
-			</h2>			
+			</h2>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{Object.entries(keyfacts).map(([category, skills]: [string, string[]]) => (
-					<div class="keyfact-card bg-darkBg border border-secondary/30 rounded-lg p-6 hover:border-secondary/50 transition-colors opacity-0">
-						<div class="keyfact-header mb-4">
-							<h4 class="text-lg font-bold text-light mb-2">{category}</h4>
-							<div class="w-8 h-0.5 bg-secondary rounded-full"></div>
-						</div>
-						
-						<div class="keyfact-skills">
-							{skills.map((skill: string) => (
-								<span class="inline-block px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-sm font-medium mr-2 mb-2 hover:bg-secondary/20 hover:border-secondary/40 transition-all duration-300">
-									{skill}
-								</span>
-							))}
-						</div>
-					</div>
-				))}
+				{
+					Object.entries(keyfacts).map(
+						([category, skills]: [string, string[]]) => (
+							<div class="keyfact-card bg-darkBg border border-secondary/30 rounded-lg p-6 hover:border-secondary/50 transition-colors opacity-0">
+								<div class="keyfact-header mb-4">
+									<h4 class="text-lg font-bold text-light mb-2">
+										{category}
+									</h4>
+									<div class="w-8 h-0.5 bg-secondary rounded-full" />
+								</div>
+
+								<div class="keyfact-skills">
+									{skills.map((skill: string) => (
+										<span class="inline-block px-3 py-1 bg-secondary/10 text-secondary border border-secondary/20 rounded-full text-sm font-medium mr-2 mb-2 hover:bg-secondary/20 hover:border-secondary/40 transition-all duration-300">
+											{skill}
+										</span>
+									))}
+								</div>
+							</div>
+						),
+					)
+				}
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="certificates" class="bg-darkBg py-12 px-4">
 		<div class="container mx-auto max-w-6xl">
-			<h2 class="text-4xl md:text-5xl font-bold mb-10 text-center text-light cert-title">
+			<h2
+				class="text-4xl md:text-5xl font-bold mb-10 text-center luxury-title cert-title"
+			>
 				Zertifikate und Kurse
 			</h2>
-			<p class="text-center text-light/80 mb-8">Zertifizierungen und ergänzende Ausbildung.</p>
-			
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cert-container">
-				{certificatesData.map((cert, index) => (
-					<div class="cert-card bg-darkBg border border-secondary/30 rounded-lg overflow-hidden shadow-lg p-6 opacity-0">
-						<div class="mb-4 flex justify-center">
-							{cert.image ? (
-								<img 
-									src={cert.image} 
-									alt={`${cert.organization || 'Zertifikat'} Logo`} 
-									class="w-12 h-12 object-contain rounded-lg"
-								/>
-							) : (
-								<div class="text-primary">
-									<i class="fas fa-certificate text-3xl"></i>
+			<p class="text-center luxury-subtitle mb-8">
+				Zertifizierungen und ergänzende Ausbildung.
+			</p>
+
+			<div
+				class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 cert-container"
+			>
+				{
+					certificatesData.map((cert, index) => (
+						<div class="cert-card bg-darkBg border border-secondary/30 rounded-lg overflow-hidden shadow-lg p-6 opacity-0">
+							<div class="mb-4 flex justify-center">
+								{cert.image ? (
+									<img
+										src={cert.image}
+										alt={`${cert.organization || "Zertifikat"} Logo`}
+										class="w-12 h-12 object-contain rounded-lg"
+									/>
+								) : (
+									<div class="text-primary">
+										<i class="fas fa-certificate text-3xl" />
+									</div>
+								)}
+							</div>
+							<h3 class="text-lg font-bold mb-2 text-light">
+								{cert.title}
+							</h3>
+							{cert.organization && (
+								<p class="text-secondary mb-2">
+									{cert.organization}
+								</p>
+							)}
+							{cert.date && (
+								<p class="text-sm text-light/70 mb-2">
+									{cert.date}
+								</p>
+							)}
+							{cert.verificationId && (
+								<div class="mt-3">
+									<p class="text-xs text-light/60 mb-1">
+										Verifizierung:
+									</p>
+									{cert.verificationId.startsWith("http") ||
+									cert.verificationId.endsWith(".pdf") ? (
+										<a
+											href={cert.verificationId}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-xs text-primary hover:text-secondary transition-colors break-all underline"
+										>
+											{cert.verificationId}
+										</a>
+									) : (
+										<p class="text-xs text-primary font-mono break-all">
+											{cert.verificationId}
+										</p>
+									)}
 								</div>
 							)}
 						</div>
-						<h3 class="text-lg font-bold mb-2 text-light">{cert.title}</h3>
-						{cert.organization && (
-							<p class="text-secondary mb-2">{cert.organization}</p>
-						)}
-						{cert.date && (
-							<p class="text-sm text-light/70 mb-2">{cert.date}</p>
-						)}
-						{cert.verificationId && (
-							<div class="mt-3">
-								<p class="text-xs text-light/60 mb-1">Verifizierung:</p>
-								{cert.verificationId.startsWith('http') || cert.verificationId.endsWith('.pdf') ? (
-									<a 
-										href={cert.verificationId} 
-										target="_blank" 
-										rel="noopener noreferrer"
-										class="text-xs text-primary hover:text-secondary transition-colors break-all underline"
-									>
-										{cert.verificationId}
-									</a>
-								) : (
-									<p class="text-xs text-primary font-mono break-all">
-										{cert.verificationId}
-									</p>
-								)}
-							</div>
-						)}
-					</div>
-				))}
+					))
+				}
 			</div>
 		</div>
 	</div>
-	
+
 	<div id="projects" class="bg-darkBg py-12 px-4">
 		<div class="container mx-auto max-w-6xl">
-			<h2 class="text-4xl md:text-5xl font-bold mb-10 text-center text-light projects-title">
+			<h2
+				class="text-4xl md:text-5xl font-bold mb-10 text-center luxury-title projects-title"
+			>
 				Projekte
 			</h2>
-			<p class="text-center text-light/80 mb-8">Projekte, die während meiner Ausbildung entwickelt wurden.</p>
-			
+			<p class="text-center luxury-subtitle mb-8">
+				Projekte, die während meiner Ausbildung entwickelt wurden.
+			</p>
+
 			<div class="space-y-24">
-				{projectsData.map((project, index) => (
-					<div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 opacity-0">
-						<div class="flex flex-col justify-center">
-							<h3 class="text-2xl md:text-3xl font-bold mb-4 text-light">{project.title}</h3>
-							<p class="text-light/80 mb-6">{project.description}</p>
-							
-							<div class="mb-6 flex flex-wrap gap-2">
-								{project.technologies.map(tech => (
-									<span class="inline-block px-3 py-1 bg-primary/30 text-light/90 text-sm rounded-full">{tech}</span>
+				{
+					projectsData.map((project, index) => (
+						<div class="project-item grid grid-cols-1 lg:grid-cols-2 gap-8 opacity-0">
+							<div class="flex flex-col justify-center">
+								<h3 class="text-2xl md:text-3xl font-bold mb-4 text-light">
+									{project.title}
+								</h3>
+								<p class="text-light/80 mb-6">
+									{project.description}
+								</p>
+
+								<div class="mb-6 flex flex-wrap gap-2">
+									{project.technologies.map((tech) => (
+										<span class="inline-block px-3 py-1 bg-primary/30 text-light/90 text-sm rounded-full">
+											{tech}
+										</span>
+									))}
+								</div>
+
+								<div class="flex flex-wrap gap-4">
+									{project.githubUrl && (
+										<a
+											href={project.githubUrl}
+											target="_blank"
+											class="btn-secondary"
+										>
+											<i class="fab fa-github" />
+											<span>Code ansehen</span>
+										</a>
+									)}
+									{project.liveUrl && (
+										<a
+											href={project.liveUrl}
+											target="_blank"
+											class="btn-secondary"
+										>
+											{project.liveUrl.endsWith(
+												".pptx",
+											) ? (
+												<>
+													<i class="fas fa-file-powerpoint" />
+													<span>
+														Präsentation ansehen
+													</span>
+												</>
+											) : (
+												<>
+													<i class="fas fa-external-link-alt" />
+													<span>Demo ansehen</span>
+												</>
+											)}
+										</a>
+									)}
+									{project.documentationUrl && (
+										<a
+											href={project.documentationUrl}
+											target="_blank"
+											class="btn-secondary"
+										>
+											<i class="fas fa-file-pdf" />
+											<span>Dokumentation ansehen</span>
+										</a>
+									)}
+								</div>
+							</div>
+
+							<div class="grid grid-cols-2 gap-3 project-images">
+								{project.images.map((image, imgIndex) => (
+									<div
+										class={`rounded-lg overflow-hidden bg-gray-900 flex items-center justify-center ${imgIndex === 0 ? "col-span-2 h-[280px]" : "h-[200px]"}`}
+									>
+										<img
+											src={image}
+											alt={`${project.title} - Bild ${imgIndex + 1}`}
+											class="max-w-full max-h-full object-contain"
+										/>
+									</div>
 								))}
 							</div>
-							
-							<div class="flex flex-wrap gap-4">
-								{project.githubUrl && (
-									<a href={project.githubUrl} target="_blank" class="btn-secondary">
-										<i class="fab fa-github"></i>
-										<span>Code ansehen</span>
-									</a>
-								)}
-								{project.liveUrl && (
-									<a href={project.liveUrl} target="_blank" class="btn-secondary">
-										{project.liveUrl.endsWith('.pptx') ? (
-											<>
-												<i class="fas fa-file-powerpoint"></i>
-												<span>Präsentation ansehen</span>
-											</>
-										) : (
-											<>
-												<i class="fas fa-external-link-alt"></i>
-												<span>Demo ansehen</span>
-											</>
-										)}
-									</a>
-								)}
-								{project.documentationUrl && (
-									<a href={project.documentationUrl} target="_blank" class="btn-secondary">
-										<i class="fas fa-file-pdf"></i>
-										<span>Dokumentation ansehen</span>
-									</a>
-								)}
-							</div>
 						</div>
-						
-						<div class="grid grid-cols-2 gap-3 project-images">
-							{project.images.map((image, imgIndex) => (
-								<div class={`rounded-lg overflow-hidden bg-gray-900 flex items-center justify-center ${imgIndex === 0 ? 'col-span-2 h-[280px]' : 'h-[200px]'}`}>
-									<img 
-										src={image} 
-										alt={`${project.title} - Bild ${imgIndex + 1}`} 
-										class="max-w-full max-h-full object-contain"
-									/>
-								</div>
-							))}
-						</div>
-					</div>
-				))}
+					))
+				}
 			</div>
-			
+
 			<!-- Mensaje para más proyectos en GitHub -->
 			<div class="mt-16 text-center border-t border-secondary/20 pt-12">
-				<h3 class="text-2xl font-bold mb-4 text-light">Weitere interessante Projekte</h3>
+				<h3 class="text-2xl font-bold mb-4 text-light">
+					Weitere interessante Projekte
+				</h3>
 				<p class="text-light/80 mb-6 max-w-2xl mx-auto">
-					In meinem GitHub-Repository finden Sie eine Auswahl an vielfältigen Projekten – von praxisnahen Anwendungen über experimentelle Ideen bis hin zu Tutorials, die zum Lernen und Nachvollziehen einladen. Die Projekte decken verschiedene Technologien und Anwendungsbereiche ab.
+					In meinem GitHub-Repository finden Sie eine Auswahl an
+					vielfältigen Projekten – von praxisnahen Anwendungen über
+					experimentelle Ideen bis hin zu Tutorials, die zum Lernen
+					und Nachvollziehen einladen. Die Projekte decken
+					verschiedene Technologien und Anwendungsbereiche ab.
 				</p>
-				
+
 				<div class="mb-6">
-					<a href="https://github.com/IanPaniagua?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+					<a
+						href="https://github.com/IanPaniagua?tab=repositories"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="btn-secondary"
+					>
 						<i class="fab fa-github"></i>
 						<span>Alle Repositories ansehen</span>
 					</a>
 				</div>
-				
+
 				<div class="flex flex-wrap justify-center gap-3">
-					<a href="https://github.com/IanPaniagua/nextjs-dashboard" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">
+					<a
+						href="https://github.com/IanPaniagua/nextjs-dashboard"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="btn-secondary text-sm"
+					>
 						<i class="fab fa-github"></i>
 						<span>nextjs-dashboard</span>
 					</a>
-					<a href="https://github.com/IanPaniagua/DanceEvent_FrontEnd" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">
+					<a
+						href="https://github.com/IanPaniagua/DanceEvent_FrontEnd"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="btn-secondary text-sm"
+					>
 						<i class="fab fa-github"></i>
 						<span>DanceEvent_FrontEnd</span>
 					</a>
-					<a href="https://github.com/IanPaniagua/RAG_german-teacher" target="_blank" rel="noopener noreferrer" class="btn-secondary text-sm">
+					<a
+						href="https://github.com/IanPaniagua/RAG_german-teacher"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="btn-secondary text-sm"
+					>
 						<i class="fab fa-github"></i>
 						<span>RAG_german-teacher</span>
 					</a>
 				</div>
 			</div>
-			
 		</div>
 	</div>
-	
+
 	<!-- Usar el componente Timeline que utiliza los datos de portfolio.ts -->
 	<Timeline />
-	
+
 	<Footer />
 </Layout>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener("DOMContentLoaded", () => {
 		// Skills animation
-		const skillsObserver = new IntersectionObserver((entries) => {
-			entries.forEach((entry, index) => {
-				if (entry.isIntersecting) {
-					setTimeout(() => {
-						(entry.target as HTMLElement).style.opacity = '1';
-						(entry.target as HTMLElement).style.transform = 'translateY(0)';
-					}, index * 200);
-				}
-			});
-		}, { threshold: 0.1 });
-		
+		const skillsObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry, index) => {
+					if (entry.isIntersecting) {
+						setTimeout(() => {
+							(entry.target as HTMLElement).style.opacity = "1";
+							(entry.target as HTMLElement).style.transform =
+								"translateY(0)";
+						}, index * 200);
+					}
+				});
+			},
+			{ threshold: 0.1 },
+		);
+
 		// Observe all skills sections
-		document.querySelectorAll('.skills-section').forEach(section => {
-			(section as HTMLElement).style.transform = 'translateY(30px)';
-			(section as HTMLElement).style.opacity = '0';
-			(section as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+		document.querySelectorAll(".skills-section").forEach((section) => {
+			(section as HTMLElement).style.transform = "translateY(30px)";
+			(section as HTMLElement).style.opacity = "0";
+			(section as HTMLElement).style.transition =
+				"opacity 0.6s ease, transform 0.6s ease";
 			skillsObserver.observe(section);
 		});
-		
+
 		// Observe keyfact cards
-		document.querySelectorAll('.keyfact-card').forEach((card, index) => {
-			(card as HTMLElement).style.transform = 'translateY(30px)';
-			(card as HTMLElement).style.opacity = '0';
-			(card as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-			
+		document.querySelectorAll(".keyfact-card").forEach((card, index) => {
+			(card as HTMLElement).style.transform = "translateY(30px)";
+			(card as HTMLElement).style.opacity = "0";
+			(card as HTMLElement).style.transition =
+				"opacity 0.6s ease, transform 0.6s ease";
+
 			// Delay animation for keyfact cards
 			setTimeout(() => {
 				skillsObserver.observe(card);
 			}, index * 100);
 		});
-		
+
 		// Burbujas flotantes de tecnologías
 		const initFloatingBubbles = () => {
-			const bubbles = document.querySelectorAll('.bubble');
-			const container = document.querySelector('.tech-bubbles');
-			const tooltip = document.getElementById('tech-tooltip');
-			
+			const bubbles = document.querySelectorAll(".bubble");
+			const container = document.querySelector(".tech-bubbles");
+			const tooltip = document.getElementById("tech-tooltip");
+
 			if (!container) return;
-			
+
 			const containerRect = container.getBoundingClientRect();
 			const containerWidth = containerRect.width;
 			const containerHeight = containerRect.height;
-			
+
 			// Array para almacenar las posiciones ocupadas
-			const occupiedPositions: Array<{x: number, y: number, width: number, height: number}> = [];
-			
+			const occupiedPositions: Array<{
+				x: number;
+				y: number;
+				width: number;
+				height: number;
+			}> = [];
+
 			// Función para verificar si dos círculos se superponen
-			const checkCollision = (x1: number, y1: number, r1: number, x2: number, y2: number, r2: number) => {
+			const checkCollision = (
+				x1: number,
+				y1: number,
+				r1: number,
+				x2: number,
+				y2: number,
+				r2: number,
+			) => {
 				const dx = x1 - x2;
 				const dy = y1 - y2;
 				const distance = Math.sqrt(dx * dx + dy * dy);
-				return distance < (r1 + r2 + 10); // +10 para margen de separación
+				return distance < r1 + r2 + 10; // +10 para margen de separación
 			};
-			
+
 			// Función para encontrar una posición válida
-			const findValidPosition = (bubbleWidth: number, bubbleHeight: number) => {
+			const findValidPosition = (
+				bubbleWidth: number,
+				bubbleHeight: number,
+			) => {
 				const radius = Math.max(bubbleWidth, bubbleHeight) / 2;
 				const maxAttempts = 100;
 				let attempts = 0;
-				
+
 				while (attempts < maxAttempts) {
 					const x = Math.random() * (containerWidth - bubbleWidth);
 					const y = Math.random() * (containerHeight - bubbleHeight);
-					
+
 					const centerX = x + bubbleWidth / 2;
 					const centerY = y + bubbleHeight / 2;
-					
+
 					// Verificar colisión con burbujas existentes
 					let hasCollision = false;
 					for (const pos of occupiedPositions) {
 						const existingCenterX = pos.x + pos.width / 2;
 						const existingCenterY = pos.y + pos.height / 2;
-						const existingRadius = Math.max(pos.width, pos.height) / 2;
-						
-						if (checkCollision(centerX, centerY, radius, existingCenterX, existingCenterY, existingRadius)) {
+						const existingRadius =
+							Math.max(pos.width, pos.height) / 2;
+
+						if (
+							checkCollision(
+								centerX,
+								centerY,
+								radius,
+								existingCenterX,
+								existingCenterY,
+								existingRadius,
+							)
+						) {
 							hasCollision = true;
 							break;
 						}
 					}
-					
+
 					if (!hasCollision) {
 						return { x, y };
 					}
-					
+
 					attempts++;
 				}
-				
+
 				// Si no encuentra posición, usar una posición en grid como fallback
-				const gridCols = Math.floor(containerWidth / (bubbleWidth + 20));
-				const gridRows = Math.floor(containerHeight / (bubbleHeight + 20));
+				const gridCols = Math.floor(
+					containerWidth / (bubbleWidth + 20),
+				);
+				const gridRows = Math.floor(
+					containerHeight / (bubbleHeight + 20),
+				);
 				const totalPositions = gridCols * gridRows;
 				const fallbackIndex = occupiedPositions.length % totalPositions;
-				
+
 				const row = Math.floor(fallbackIndex / gridCols);
 				const col = fallbackIndex % gridCols;
-				
+
 				return {
 					x: col * (bubbleWidth + 20) + 10,
-					y: row * (bubbleHeight + 20) + 10
+					y: row * (bubbleHeight + 20) + 10,
 				};
 			};
-			
+
 			bubbles.forEach((bubble, index) => {
 				const element = bubble as HTMLElement;
-				
+
 				// Obtener dimensiones de la burbuja
 				const computedStyle = window.getComputedStyle(element);
 				const bubbleWidth = parseInt(computedStyle.width) || 64;
 				const bubbleHeight = parseInt(computedStyle.height) || 64;
-				
+
 				// Encontrar posición válida sin superposición
 				const position = findValidPosition(bubbleWidth, bubbleHeight);
-				
+
 				element.style.left = `${position.x}px`;
 				element.style.top = `${position.y}px`;
-				
+
 				// Registrar la posición ocupada
 				occupiedPositions.push({
 					x: position.x,
 					y: position.y,
 					width: bubbleWidth,
-					height: bubbleHeight
+					height: bubbleHeight,
 				});
-				
+
 				// Animación de flotación única para cada burbuja
 				const floatDuration = 4000 + Math.random() * 2000; // 4-6 segundos
 				const floatDelay = Math.random() * 2000; // 0-2 segundos de delay
-				
+
 				element.style.animation = `float-${index % 3} ${floatDuration}ms ease-in-out infinite`;
 				element.style.animationDelay = `${floatDelay}ms`;
-				
+
 				// Efectos interactivos
-				element.addEventListener('mouseenter', () => {
-					element.style.transform = 'scale(1.2)';
-					element.style.transition = 'transform 0.3s ease';
-					element.style.zIndex = '10';
-					
+				element.addEventListener("mouseenter", () => {
+					element.style.transform = "scale(1.2)";
+					element.style.transition = "transform 0.3s ease";
+					element.style.zIndex = "10";
+
 					// Mostrar tooltip
 					if (tooltip) {
-						const techName = element.getAttribute('data-tech');
+						const techName = element.getAttribute("data-tech");
 						tooltip.textContent = techName;
-						
+
 						// Mostrar tooltip temporalmente para obtener dimensiones reales
-						tooltip.style.visibility = 'hidden';
-						tooltip.style.opacity = '1';
-						
+						tooltip.style.visibility = "hidden";
+						tooltip.style.opacity = "1";
+
 						// Pequeño retraso para asegurar que el tooltip se renderice
 						setTimeout(() => {
 							// Posicionar tooltip de manera inteligente
 							const bubbleRect = element.getBoundingClientRect();
-							const containerRect = container.getBoundingClientRect();
-							
+							const containerRect =
+								container.getBoundingClientRect();
+
 							// Calcular posición base (centrada arriba de la burbuja)
-							let tooltipX = bubbleRect.left - containerRect.left + bubbleRect.width / 2;
-							let tooltipY = bubbleRect.top - containerRect.top - 40;
-							
+							let tooltipX =
+								bubbleRect.left -
+								containerRect.left +
+								bubbleRect.width / 2;
+							let tooltipY =
+								bubbleRect.top - containerRect.top - 40;
+
 							// Ajustar tooltip para que no se salga del contenedor
 							const tooltipWidth = tooltip.offsetWidth;
 							const tooltipHeight = tooltip.offsetHeight;
-							
+
 							// Ajustar posición horizontal
 							if (tooltipX - tooltipWidth / 2 < 10) {
 								// Muy cerca del borde izquierdo
 								tooltipX = 10 + tooltipWidth / 2;
-							} else if (tooltipX + tooltipWidth / 2 > containerRect.width - 10) {
+							} else if (
+								tooltipX + tooltipWidth / 2 >
+								containerRect.width - 10
+							) {
 								// Muy cerca del borde derecho
-								tooltipX = containerRect.width - 10 - tooltipWidth / 2;
+								tooltipX =
+									containerRect.width - 10 - tooltipWidth / 2;
 							}
-							
+
 							// Ajustar posición vertical
 							if (tooltipY < 10) {
 								// Muy cerca del borde superior, mostrar debajo de la burbuja
-								tooltipY = bubbleRect.top - containerRect.top + bubbleRect.height + 10;
-							} else if (tooltipY + tooltipHeight > containerRect.height - 10) {
+								tooltipY =
+									bubbleRect.top -
+									containerRect.top +
+									bubbleRect.height +
+									10;
+							} else if (
+								tooltipY + tooltipHeight >
+								containerRect.height - 10
+							) {
 								// Muy cerca del borde inferior, mostrar arriba
-								tooltipY = bubbleRect.top - containerRect.top - tooltipHeight - 10;
+								tooltipY =
+									bubbleRect.top -
+									containerRect.top -
+									tooltipHeight -
+									10;
 							}
-							
+
 							// Aplicar posición final
 							tooltip.style.left = `${tooltipX - tooltipWidth / 2}px`;
 							tooltip.style.top = `${tooltipY}px`;
-							tooltip.style.visibility = 'visible';
+							tooltip.style.visibility = "visible";
 						}, 10);
 					}
 				});
-				
-				element.addEventListener('mouseleave', () => {
-					element.style.transform = 'scale(1)';
-					element.style.zIndex = '1';
+
+				element.addEventListener("mouseleave", () => {
+					element.style.transform = "scale(1)";
+					element.style.zIndex = "1";
 					if (tooltip) {
-						tooltip.style.opacity = '0';
+						tooltip.style.opacity = "0";
 					}
 				});
-				
+
 				// Efecto de clic
-				element.addEventListener('click', () => {
-					element.style.animation = 'bounce 0.6s ease';
+				element.addEventListener("click", () => {
+					element.style.animation = "bounce 0.6s ease";
 					setTimeout(() => {
 						element.style.animation = `float-${index % 3} ${floatDuration}ms ease-in-out infinite`;
 					}, 600);
 				});
 			});
 		};
-		
+
 		// Inicializar burbujas cuando la sección sea visible
-		const techSection = document.querySelector('.tech-bubbles');
+		const techSection = document.querySelector(".tech-bubbles");
 		if (techSection) {
 			const techObserver = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
+				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
 						// Igualar altura con la sección de idiomas
-						const languagesSection = document.querySelector('.skills-section:first-child .space-y-4');
-						const techContainer = document.querySelector('.tech-bubbles')?.parentElement;
-						
+						const languagesSection = document.querySelector(
+							".skills-section:first-child .space-y-4",
+						);
+						const techContainer =
+							document.querySelector(
+								".tech-bubbles",
+							)?.parentElement;
+
 						if (languagesSection && techContainer) {
-							const languagesHeight = languagesSection.getBoundingClientRect().height;
+							const languagesHeight =
+								languagesSection.getBoundingClientRect().height;
 							const minHeight = Math.max(languagesHeight, 280); // Mínimo 280px
-							
-							(techContainer as HTMLElement).style.height = `${minHeight}px`;
-							(techSection as HTMLElement).style.height = `${minHeight}px`;
+
+							(techContainer as HTMLElement).style.height =
+								`${minHeight}px`;
+							(techSection as HTMLElement).style.height =
+								`${minHeight}px`;
 						}
-						
+
 						setTimeout(initFloatingBubbles, 500);
 						techObserver.unobserve(entry.target);
 					}
@@ -594,77 +855,95 @@ import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '
 			});
 			techObserver.observe(techSection);
 		}
-		
+
 		// Animación de partículas de fondo
-		const particles = document.querySelectorAll('.particle');
+		const particles = document.querySelectorAll(".particle");
 		particles.forEach((particle, index) => {
 			const element = particle as HTMLElement;
 			const randomX = Math.random() * window.innerWidth;
 			const randomY = Math.random() * window.innerHeight;
-			
+
 			element.style.left = `${randomX}px`;
 			element.style.top = `${randomY}px`;
 			element.style.animation = `float-particle ${4000 + index * 1000}ms ease-in-out infinite`;
 			element.style.animationDelay = `${index * 500}ms`;
 		});
-		
+
 		// Certificates animation
-		const certObserver = new IntersectionObserver((entries) => {
-			entries.forEach((entry, index) => {
-				if (entry.isIntersecting) {
-					setTimeout(() => {
-						(entry.target as HTMLElement).style.opacity = '1';
-						(entry.target as HTMLElement).style.transform = 'translateY(0)';
-					}, index * 150); // Staggered animation
-				}
-			});
-		}, { threshold: 0.1 });
-		
+		const certObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry, index) => {
+					if (entry.isIntersecting) {
+						setTimeout(() => {
+							(entry.target as HTMLElement).style.opacity = "1";
+							(entry.target as HTMLElement).style.transform =
+								"translateY(0)";
+						}, index * 150); // Staggered animation
+					}
+				});
+			},
+			{ threshold: 0.1 },
+		);
+
 		// Observe all certificate cards
-		document.querySelectorAll('.cert-card').forEach(card => {
-			(card as HTMLElement).style.transform = 'translateY(30px)';
-			(card as HTMLElement).style.opacity = '0';
-			(card as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+		document.querySelectorAll(".cert-card").forEach((card) => {
+			(card as HTMLElement).style.transform = "translateY(30px)";
+			(card as HTMLElement).style.opacity = "0";
+			(card as HTMLElement).style.transition =
+				"opacity 0.6s ease, transform 0.6s ease";
 			certObserver.observe(card);
 		});
-		
+
 		// Projects animation
-		const projectObserver = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting) {
-					setTimeout(() => {
-						(entry.target as HTMLElement).style.opacity = '1';
-						(entry.target as HTMLElement).style.transform = 'translateY(0)';
-						
-						// Animate project images with staggered delay
-						const images = entry.target.querySelectorAll('.project-images img');
-						images.forEach((img, idx) => {
-							setTimeout(() => {
-								(img as HTMLElement).style.transform = 'scale(1)';
-								(img as HTMLElement).style.opacity = '1';
-							}, 300 + (idx * 200));
-						});
-					}, 200);
-				}
-			});
-		}, { threshold: 0.1 });
-		
+		const projectObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setTimeout(() => {
+							(entry.target as HTMLElement).style.opacity = "1";
+							(entry.target as HTMLElement).style.transform =
+								"translateY(0)";
+
+							// Animate project images with staggered delay
+							const images = entry.target.querySelectorAll(
+								".project-images img",
+							);
+							images.forEach((img, idx) => {
+								setTimeout(
+									() => {
+										(img as HTMLElement).style.transform =
+											"scale(1)";
+										(img as HTMLElement).style.opacity =
+											"1";
+									},
+									300 + idx * 200,
+								);
+							});
+						}, 200);
+					}
+				});
+			},
+			{ threshold: 0.1 },
+		);
+
 		// Observe all project items
-		document.querySelectorAll('.project-item').forEach(item => {
-			(item as HTMLElement).style.transform = 'translateY(50px)';
-			(item as HTMLElement).style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-			(item as HTMLElement).style.opacity = '0';
-			
+		document.querySelectorAll(".project-item").forEach((item) => {
+			(item as HTMLElement).style.transform = "translateY(50px)";
+			(item as HTMLElement).style.transition =
+				"opacity 0.6s ease, transform 0.6s ease";
+			(item as HTMLElement).style.opacity = "0";
+
 			// Set initial state for project images
-			const projectImages = item.querySelectorAll('.project-images img');
+			const projectImages = item.querySelectorAll(".project-images img");
 			if (projectImages) {
-				projectImages.forEach(img => {
-					(img as HTMLElement).style.transform = 'scale(0.8)';
-					(img as HTMLElement).style.opacity = '0';
-					(img as HTMLElement).style.transition = 'transform 0.6s ease, opacity 0.6s ease';
+				projectImages.forEach((img) => {
+					(img as HTMLElement).style.transform = "scale(0.8)";
+					(img as HTMLElement).style.opacity = "0";
+					(img as HTMLElement).style.transition =
+						"transform 0.6s ease, opacity 0.6s ease";
 				});
 			}
-			
+
 			projectObserver.observe(item);
 		});
 	});
@@ -673,52 +952,85 @@ import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '
 <style>
 	/* Animaciones de flotación para las burbujas */
 	@keyframes float-0 {
-		0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-		25% { transform: translateY(-5px) translateX(3px) rotate(0.5deg); }
-		50% { transform: translateY(-10px) translateX(-3px) rotate(-0.5deg); }
-		75% { transform: translateY(-5px) translateX(4px) rotate(0.25deg); }
+		0%,
+		100% {
+			transform: translateY(0px) translateX(0px) rotate(0deg);
+		}
+		25% {
+			transform: translateY(-5px) translateX(3px) rotate(0.5deg);
+		}
+		50% {
+			transform: translateY(-10px) translateX(-3px) rotate(-0.5deg);
+		}
+		75% {
+			transform: translateY(-5px) translateX(4px) rotate(0.25deg);
+		}
 	}
-	
+
 	@keyframes float-1 {
-		0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-		33% { transform: translateY(-8px) translateX(-4px) rotate(-0.5deg); }
-		66% { transform: translateY(-12px) translateX(2px) rotate(0.5deg); }
+		0%,
+		100% {
+			transform: translateY(0px) translateX(0px) rotate(0deg);
+		}
+		33% {
+			transform: translateY(-8px) translateX(-4px) rotate(-0.5deg);
+		}
+		66% {
+			transform: translateY(-12px) translateX(2px) rotate(0.5deg);
+		}
 	}
-	
+
 	@keyframes float-2 {
-		0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-		20% { transform: translateY(-4px) translateX(5px) rotate(0.25deg); }
-		40% { transform: translateY(-9px) translateX(-2px) rotate(-0.25deg); }
-		60% { transform: translateY(-6px) translateX(3px) rotate(0.5deg); }
-		80% { transform: translateY(-11px) translateX(-3px) rotate(-0.5deg); }
+		0%,
+		100% {
+			transform: translateY(0px) translateX(0px) rotate(0deg);
+		}
+		20% {
+			transform: translateY(-4px) translateX(5px) rotate(0.25deg);
+		}
+		40% {
+			transform: translateY(-9px) translateX(-2px) rotate(-0.25deg);
+		}
+		60% {
+			transform: translateY(-6px) translateX(3px) rotate(0.5deg);
+		}
+		80% {
+			transform: translateY(-11px) translateX(-3px) rotate(-0.5deg);
+		}
 	}
-	
+
 	/* Animación de rebote para clics */
 	@keyframes bounce {
-		0%, 100% { transform: scale(1); }
-		50% { transform: scale(1.3); }
+		0%,
+		100% {
+			transform: scale(1);
+		}
+		50% {
+			transform: scale(1.3);
+		}
 	}
-	
+
 	/* Animación de partículas de fondo */
 	@keyframes float-particle {
-		0%, 100% { 
+		0%,
+		100% {
 			transform: translateY(0px) translateX(0px);
 			opacity: 0.3;
 		}
-		25% { 
+		25% {
 			transform: translateY(-50px) translateX(20px);
 			opacity: 0.6;
 		}
-		50% { 
+		50% {
 			transform: translateY(-100px) translateX(-20px);
 			opacity: 0.8;
 		}
-		75% { 
+		75% {
 			transform: translateY(-50px) translateX(30px);
 			opacity: 0.4;
 		}
 	}
-	
+
 	/* Efectos adicionales para las burbujas */
 	.bubble {
 		cursor: pointer;
@@ -726,44 +1038,104 @@ import { projectsData, certificatesData, personalInfo, skills, keyfacts } from '
 		border: 2px solid rgba(255, 255, 255, 0.2);
 		backdrop-filter: blur(5px);
 	}
-	
+
 	.bubble:hover {
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 		border-color: rgba(255, 255, 255, 0.4);
 	}
-	
+
 	/* Gradiente de fondo para el contenedor */
 	.tech-bubbles::before {
-		content: '';
+		content: "";
 		position: absolute;
 		top: 0;
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: radial-gradient(circle at 30% 70%, rgba(18, 52, 88, 0.1) 0%, transparent 50%),
-		            radial-gradient(circle at 70% 30%, rgba(18, 52, 88, 0.05) 0%, transparent 50%);
+		background: radial-gradient(
+				circle at 30% 70%,
+				rgba(18, 52, 88, 0.1) 0%,
+				transparent 50%
+			),
+			radial-gradient(
+				circle at 70% 30%,
+				rgba(18, 52, 88, 0.05) 0%,
+				transparent 50%
+			);
 		pointer-events: none;
 	}
-	
+
 	/* Responsivo */
 	@media (max-width: 768px) {
 		.bubble {
 			transform: scale(0.8);
 		}
 	}
-	
+
 	/* Posiciones de las burbujas */
-	.bubble-1 { top: 10%; left: 15%; animation: float 8s infinite 0s; }
-	.bubble-2 { top: 25%; left: 70%; animation: float 6s infinite 1s; }
-	.bubble-3 { top: 40%; left: 20%; animation: float 7s infinite 2s; }
-	.bubble-4 { top: 5%; left: 50%; animation: float 9s infinite 1.5s; }
-	.bubble-5 { top: 65%; left: 80%; animation: float 8s infinite 2.5s; }
-	.bubble-6 { top: 80%; left: 25%; animation: float 6s infinite 3s; }
-	.bubble-7 { top: 55%; left: 60%; animation: float 7s infinite 0.5s; }
-	.bubble-8 { top: 75%; left: 5%; animation: float 8s infinite 3.5s; }
-	.bubble-9 { top: 20%; left: 90%; animation: float 9s infinite 4s; }
-	.bubble-10 { top: 85%; left: 55%; animation: float 6s infinite 1.2s; }
-	.bubble-11 { top: 15%; left: 35%; animation: float 7s infinite 2.8s; }
-	.bubble-12 { top: 45%; left: 10%; animation: float 8s infinite 4.2s; }
-	.bubble-13 { top: 30%; left: 85%; animation: float 7s infinite 3.8s; }
+	.bubble-1 {
+		top: 10%;
+		left: 15%;
+		animation: float 8s infinite 0s;
+	}
+	.bubble-2 {
+		top: 25%;
+		left: 70%;
+		animation: float 6s infinite 1s;
+	}
+	.bubble-3 {
+		top: 40%;
+		left: 20%;
+		animation: float 7s infinite 2s;
+	}
+	.bubble-4 {
+		top: 5%;
+		left: 50%;
+		animation: float 9s infinite 1.5s;
+	}
+	.bubble-5 {
+		top: 65%;
+		left: 80%;
+		animation: float 8s infinite 2.5s;
+	}
+	.bubble-6 {
+		top: 80%;
+		left: 25%;
+		animation: float 6s infinite 3s;
+	}
+	.bubble-7 {
+		top: 55%;
+		left: 60%;
+		animation: float 7s infinite 0.5s;
+	}
+	.bubble-8 {
+		top: 75%;
+		left: 5%;
+		animation: float 8s infinite 3.5s;
+	}
+	.bubble-9 {
+		top: 20%;
+		left: 90%;
+		animation: float 9s infinite 4s;
+	}
+	.bubble-10 {
+		top: 85%;
+		left: 55%;
+		animation: float 6s infinite 1.2s;
+	}
+	.bubble-11 {
+		top: 15%;
+		left: 35%;
+		animation: float 7s infinite 2.8s;
+	}
+	.bubble-12 {
+		top: 45%;
+		left: 10%;
+		animation: float 8s infinite 4.2s;
+	}
+	.bubble-13 {
+		top: 30%;
+		left: 85%;
+		animation: float 7s infinite 3.8s;
+	}
 </style>
